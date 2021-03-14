@@ -95,7 +95,7 @@ analytics:
 # Site Author
 author:
   name             : "025"
-  avatar           : "/assets/images/pikacu_face.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/pikacu_tail.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "I'm noob student develope **025**🌱"
   location         : "Korea"
   email            : 
