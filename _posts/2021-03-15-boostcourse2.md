@@ -1,7 +1,7 @@
 ---
 title: "boostcourse 풀스택: 서블릿"
-toc: tru
-toc_label: "서블릿"
+# toc: tru
+# toc_label: "서블릿"
 categories:
   - Spring
   - Servlet
