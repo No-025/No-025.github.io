@@ -6,7 +6,7 @@ categories:
   - Spring
   - Servlet
 ---
-## Servlet
+## 
 
 ```
 protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
