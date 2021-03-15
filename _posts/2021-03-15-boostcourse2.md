@@ -22,7 +22,7 @@ categories:
 자바 어노테이션(annotation) 사용(@을 앞에 붙인)
 > 3.1 버전  
 > 
-```
+```java
 protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	response.setContentType("text/html;charset=UTF-8"); // 응답 컨텐츠 타입 지정
 	PrintWriter out = response.getWriter(); // 문자열을 출력할 수 있는 PrintWriter 구함
@@ -39,7 +39,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 web.xml파일에 등록
 >2.5버전 web.xml  
 >
-```
+```html
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
@@ -92,7 +92,7 @@ version="2.5">
 
 ## Header정보 읽어 들이기
 
-```
+```java
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -130,7 +130,7 @@ version="2.5">
 
 URL주소의 파라미터 정보를 읽어 들여 브라우저 화면에 출력함
 
-```
+```java
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
@@ -160,7 +160,7 @@ URL주소의 파라미터 정보를 읽어 들여 브라우저 화면에 출력�
 
 ## 그외의 요청정보 출력하기
 
-```
+```java
 protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html");
