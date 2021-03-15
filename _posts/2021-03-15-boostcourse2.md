@@ -12,12 +12,12 @@ categories:
 자바 웹 어플리케이션의 구성요소 중 **동적인 처리**를 하는 프로그램의 역할  
 **WAS**에서 동작하는 java클래스  
 **HttpServlet클래스**를 상속받아야 함  
-**HTML은 JSP로** 표현, **복잡한 프로그래밍은 서블릿**으로 구현
+**HTML은 JSP로** 표현, **복잡한 프로그래밍은 서블릿**으로 구현  
   
-    
-    ---
-      
-        
+  
+---
+  
+  
 ## Servlet 작성방법
 
 1. **3.0이상** 버전
@@ -35,11 +35,11 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 	out.close();
 }
 ```  
+   
   
+---
   
-    ---
-      
-              
+          
 2. **3.0이하** 버전
 
 web.xml파일에 등록  
@@ -73,19 +73,20 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
 </web-app>
 ```  
   
-    
----  
   
-    
+---
+  
+  
 ## Serverlet 라이프사이클
 
 **Servlet 객체 생성**: 최초 *한번*  
 **Init() 호출** -> 최초 *한번*  
 **service(), doGet(), doPost() 호출** -> 요청시 *매번*  
 **destroy() 호출** -> 마지막 *한번* (servlet 수정, 서버 재가동 등)  
+   
   
-    
-    ---
+---
+  
   
   
 ## WAS가 웹브라우저로부터 요청 받으면
@@ -102,7 +103,7 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
 ## Header정보 읽어 들이기
 
 ```java
-	/**
+/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -130,15 +131,14 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
-	}
+	}	
 ```
-
-----------
-
+  
+---
+  
 ## 파라미터 읽어 들이기
-
-URL주소의 파라미터 정보를 읽어 들여 브라우저 화면에 출력함
-
+URL주소의 파라미터 정보를 읽어 들여 브라우저 화면에 출력함  
+  
 ```java
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
@@ -156,17 +156,18 @@ URL주소의 파라미터 정보를 읽어 들여 브라우저 화면에 출력�
 		out.println("</body>");
 		out.println("</html>");
 	}
-```
+```  
+
 >파라미터가 없는 경우
 >
 ![Parax](/assets/images/210315parax.png "Parax")  
 
 >파라미터가 있는 경우
 >
-![Parao](/assets/images/210315parao.png "Parao")
-
-----------
-
+![Parao](/assets/images/210315parao.png "Parao")  
+  
+---
+  
 ## 그외의 요청정보 출력하기
 
 ```java
@@ -193,6 +194,4 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 		out.println("</html>");
 	}
 ```
-
-![Local](/assets/images/210315local.png "Local")  
-*로컬 서버이기때문에 0:0:0:0:0:0:0:1*
+로컬 서버이기때문에 *0:0:0:0:0:0:0:1*
