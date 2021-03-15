@@ -31,7 +31,7 @@ categories:
 
 >html 예제  
 >
-```HTML
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -89,13 +89,13 @@ categories:
 ## CSS: style을 HTML페이지에 적용하는 3가지 방법
 
 1. **inline**: 가장 먼저 적용됨
-```CSS
+```css
 <p style="border:1px solid gray;color:red;font-size:2em;">
 ```
 
 2. **internal**: 별도의 css파일을 관리할 필요없지만 유지보수 어려움
 
-```CSS
+```css
 <head>
 <style>
 p  {
@@ -109,7 +109,7 @@ p  {
 
 3. **external**: 외부파일(.css)로 지정하는 방식으로 짧지않다면 권유하는 방식
 
-```CSS
+```css
 <head>
 	<link rel="stylesheet" href="style.css">
 </head>
@@ -128,7 +128,7 @@ CSS 스타일은 **경쟁**에 의해서 스타일이 적용됨
 ---
 
 ## 디버깅
-크롬 개발자도구의 *Element panel*  
+### 크롬 개발자도구의 Element panel
 현재 엘리먼트의 값을 임시로 바꿀 수 있음    
 최종 결정된 CSS 값을 확인할 수 있음
 
