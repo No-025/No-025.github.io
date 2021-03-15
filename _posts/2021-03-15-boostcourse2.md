@@ -1,7 +1,7 @@
 ---
 title: "boostcourse 풀스택: 서블릿"
-# toc: tru
-# toc_label: "서블릿"
+toc: tru
+toc_label: "서블릿"
 categories:
   - Spring
   - Servlet
@@ -37,9 +37,10 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
   
 3. **3.0이하** 버전
 web.xml파일에 등록
+
 >2.5버전 web.xml  
 >
-```html
+```
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
@@ -80,8 +81,7 @@ version="2.5">
 ---
 
 ## WAS가 웹브라우저로부터 요청 받으면
-![](https://blog.kakaocdn.net/dn/kZe9p/btqZDPSPY7r/xC3kbkrwG5anR763lcU82K/img.png)
-
+![Was](/assets/images/210315was.png "Was")  
 *(출처: boostcourse)*
 
 1. 요청할 때 가지고 들어온 다양한 정보들을  HttpServletRequest객체를 생성하여 저장
@@ -150,11 +150,11 @@ URL주소의 파라미터 정보를 읽어 들여 브라우저 화면에 출력�
 ```
 >파라미터가 없는 경우
 >
-![](https://blog.kakaocdn.net/dn/bNKI0X/btqZtzcvjnK/OupdSYw2xzwiFuQRYyykr1/img.png)  
+![Parax](/assets/images/210315parax.png "Parax")  
 
 >파라미터가 있는 경우
 >
-![](https://blog.kakaocdn.net/dn/bL8BSR/btqZyvHvKfR/01FRVvCkCRbvQYasnmK5q0/img.png)
+![Parao](/assets/images/210315parao.png "Parao")
 
 ----------
 
@@ -185,5 +185,5 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 	}
 ```
 
-![](https://blog.kakaocdn.net/dn/IVoaj/btqZvNIFTbs/tXHBrhUgZGbYEfF8sjqfB0/img.png)  
+![Local](/assets/images/210315local.png "Local")  
 *로컬 서버이기때문에 0:0:0:0:0:0:0:1*
