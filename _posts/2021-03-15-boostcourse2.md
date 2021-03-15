@@ -20,10 +20,10 @@ categories:
   
 ## Servlet 작성방법
 
-1. **3.0이상** 버전
+1. **3.0이상** 버전  
 자바 어노테이션(annotation) 사용(@을 앞에 붙인)  
 > 3.1 버전  
-> 
+
 ```java
 protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	response.setContentType("text/html;charset=UTF-8"); // 응답 컨텐츠 타입 지정
@@ -40,11 +40,10 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 ---
   
           
-2. **3.0이하** 버전
-
+2. **3.0이하** 버전  
 web.xml파일에 등록  
 >2.5버전 web.xml  
->  
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml version="1.0" encoding="UTF-8"?>
@@ -194,4 +193,3 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 		out.println("</html>");
 	}
 ```
-로컬 서버이기때문에 *0:0:0:0:0:0:0:1*
