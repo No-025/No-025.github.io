@@ -45,7 +45,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 web.xml파일에 등록  
 >2.5버전 web.xml  
 >  
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
@@ -140,22 +140,22 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
 URL주소의 파라미터 정보를 읽어 들여 브라우저 화면에 출력함  
   
 ```java
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("text/html");
-		PrintWriter out = response.getWriter();
-		out.println("<html>");
-		out.println("<head><title>form</title></head>");
-		out.println("<body>");
-
-		String name = request.getParameter("name");
-		String age = request.getParameter("age");
+protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	response.setContentType("text/html");
+	PrintWriter out = response.getWriter();
+	out.println("<html>");
+	out.println("<head><title>form</title></head>");
+	out.println("<body>");
+	
+	String name = request.getParameter("name");
+	String age = request.getParameter("age");
+	
+	out.println("name : " + name + "<br>");
+	out.println("age : " +age + "<br>");
 		
-		out.println("name : " + name + "<br>");
-		out.println("age : " +age + "<br>");
-		
-		out.println("</body>");
-		out.println("</html>");
-	}
+	out.println("</body>");
+	out.println("</html>");
+}
 ```  
 
 >파라미터가 없는 경우
