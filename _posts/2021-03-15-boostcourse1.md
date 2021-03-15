@@ -30,13 +30,13 @@ categories:
 ## CSS: style을 HTML페이지에 적용하는 3가지 방법
 
 1. **inline**: 가장 먼저 적용됨
-```css
+```
 <p style="border:1px solid gray;color:red;font-size:2em;">
 ```
 
 2. **internal**: 별도의 css파일을 관리할 필요없지만 유지보수 어려움
 
-```css
+```
 <head>
 <style>
 p  {
@@ -50,7 +50,7 @@ p  {
 
 3. **external**: 외부파일(.css)로 지정하는 방식으로 짧지않다면 권유하는 방식
 
-```css
+```
 <head>
 	<link rel="stylesheet" href="style.css">
 </head>
