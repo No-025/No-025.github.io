@@ -5,6 +5,8 @@ categories:
   - CSS
 ---
 
+CSS
+
 ```CSS
 @charset "UTF-8";
 
