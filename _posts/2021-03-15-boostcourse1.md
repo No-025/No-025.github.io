@@ -30,13 +30,17 @@ categories:
 
 ## CSS: style을 HTML페이지에 적용하는 3가지 방법
 
-### **inline**: 가장 먼저 적용됨  
+### inline
+
+-가장 먼저 적용됨  
 
 ```CSS
 <p style="border:1px solid gray; color:red; font-size:2em;">
 ```  
 
-### **internal**: css파일을 관리할 필요없지만 유지보수 어려움  
+### internal
+
+-css파일을 관리할 필요없지만 유지보수 어려움  
 
 ```html
 <head>
@@ -50,7 +54,9 @@ p  {
 </head>
 ```  
 
-### **external**: 외부파일(.css)로 지정하는 방식(**권장**) 
+### external
+
+-외부파일(.css)로 지정하는 방식(**권장**) 
 
 ```html
 <head>
