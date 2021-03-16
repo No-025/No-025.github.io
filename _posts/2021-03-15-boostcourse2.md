@@ -9,18 +9,18 @@ categories:
 
 ## Servlet이란?
 
-**동적인 처리**를 하는 프로그램의 역할  
-**WAS**에서 동작하는 java클래스  
-**HttpServlet클래스**를 상속받아야 함  
-**HTML은 JSP로** 표현, *복잡한 프로그래밍은 서블릿*으로 구현  
+*동적*인 처리를 하는 프로그램의 역할  
+*WAS*에서 동작하는 java클래스  
+*HttpServlet클래스*를 상속받아야 함  
+*HTML은 JSP로* 표현, *복잡한 프로그래밍은 서블릿*으로 구현  
   
   
 ---
   
   
-## Servlet 작성방법
+## Servlet 버전에 따른 작성방법
 
-1. **3.0이상** 버전  
+### **3.0이상** 버전  
 자바 어노테이션(annotation) 사용(@을 앞에 붙인)  
 
 > 3.1 버전  
@@ -41,7 +41,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 ---
   
           
-2. **3.0이하** 버전  
+### **3.0이하** 버전  
 web.xml파일에 등록  
 
 >2.5버전 web.xml  
@@ -88,15 +88,14 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
   
 ---
   
-  
-  
+   
 ## WAS가 웹브라우저로부터 요청 받으면
 
 ![Was](/assets/images/210315was.png "Was")  
 *(출처: boostcourse)*  
 
 1. 요청할 때 가지고 들어온 다양한 정보들을  
-*HttpServletRequest객체*를 생성하여 저장  
+*HttpServletRequest객체*를 생성하여 저장
 2. 웹 브라우저에 응답을 보낼 정보들을  
 *HttpServletResponse객체*를 생성하여 저장  
 3. 생성된 HttpServletRequest, HttpServletResponse 객체를  
