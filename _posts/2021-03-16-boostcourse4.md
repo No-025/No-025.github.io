@@ -1,7 +1,5 @@
 ---
 title: "210316-나를 소개하는 홈페이지 만들기"
-toc: tru
-toc_label: "CSS"
 categories:
   - Spring
   - CSS
