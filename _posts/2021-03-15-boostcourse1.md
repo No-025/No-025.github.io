@@ -1,5 +1,5 @@
 ---
-title: "boostcourse 풀스택: 웹프그래밍 기초"
+title: "웹프그래밍 기초"
 toc: tru
 toc_label: "웹프로그래밍 기초"
 categories:
