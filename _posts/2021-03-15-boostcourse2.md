@@ -81,8 +81,11 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
 ## Serverlet 라이프사이클
 
 **Servlet 객체 생성**: 최초 *한번*  
+
 **Init() 호출** -> 최초 *한번*  
+
 **service(), doGet(), doPost() 호출** -> 요청시 *매번*  
+
 **destroy() 호출** -> 마지막 *한번* (servlet 수정, 서버 재가동 등)  
    
   
@@ -95,11 +98,13 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
 *(출처: boostcourse)*  
 
 1. 요청할 때 가지고 들어온 다양한 정보들을  
-*HttpServletRequest객체*를 생성하여 저장
+**HttpServletRequest객체**를 생성하여 저장
+
 2. 웹 브라우저에 응답을 보낼 정보들을  
-*HttpServletResponse객체*를 생성하여 저장  
+**HttpServletResponse객체**를 생성하여 저장  
+
 3. 생성된 HttpServletRequest, HttpServletResponse 객체를  
-서블릿에게 전달
+**서블릿에게 전달**
 
 ----------
 
