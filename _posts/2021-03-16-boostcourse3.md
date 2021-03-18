@@ -17,7 +17,9 @@ categories:
 `톰캣 경로와 이클립스 경로를 맞춰주자`  
 
 1. 이클립스 Project Explore을 연다.
+
 2. 이클립스에 연결한 톰캣파일을 연다.
+
 3. server.xml파일을 연다.
 
 ```xml
