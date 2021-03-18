@@ -14,19 +14,19 @@ categories:
 
 그럴땐,  
 
-`톰캣 경로와 이클립스 경로를 맞춰주자`  
+> 톰캣 경로와 이클립스 경로를 맞춰주자
 
-1. 이클립스 Project Explore을 연다.
+1. 이클립스 `Project Explore`을 연다.
 
-2. 이클립스에 연결한 톰캣파일을 연다.
+2. 이클립스에 연결한 `톰캣 파일`을 연다.
 
-3. server.xml파일을 연다.
+3. `server.xml파일`을 연다.
 
 ```xml
  <Host appBase="webapps" autoDeploy="true" name="localhost" unpackWARs="true">
 ```
 
-"webapps"부분에 이클립스 경로를 넣어준다.
+`"webapps"`부분에 이클립스 경로를 넣어준다.
 
 ```xml
  <Host appBase="D:\eclipse-workspace\aboutme" autoDeploy="true" name="localhost" unpackWARs="true">
