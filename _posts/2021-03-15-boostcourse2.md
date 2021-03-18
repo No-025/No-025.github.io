@@ -9,10 +9,11 @@ categories:
 
 ## Servlet이란?
 
-*동적*인 처리를 하는 프로그램의 역할  
-*WAS*에서 동작하는 java클래스  
-*HttpServlet클래스*를 상속받아야 함  
-*HTML은 JSP로* 표현, *복잡한 프로그래밍은 서블릿*으로 구현  
+***동적***인 처리를 하는 프로그램의 역할
+
+- WAS에서 동작하는 java클래스  
+- HttpServlet클래스를 상속받아야 함  
+- <u>HTML은 JSP</u>로 표현, <u>복잡한 프로그래밍은 서블릿</u>으로 구현  
   
   
 ---
@@ -21,6 +22,7 @@ categories:
 ## Servlet 버전에 따른 작성방법
 
 ### **3.0이상** 버전  
+
 자바 어노테이션(annotation) 사용(@을 앞에 붙인)  
 
 > 3.1 버전  
@@ -42,6 +44,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
   
           
 ### **3.0이하** 버전  
+
 web.xml파일에 등록  
 
 >2.5버전 web.xml  
@@ -80,13 +83,13 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
   
 ## Serverlet 라이프사이클
 
-**Servlet 객체 생성**: 최초 *한번*  
+`Servlet 객체 생성` -> 최초 한번  
 
-**Init() 호출** -> 최초 *한번*  
+`Init() 호출` -> 최초 한번
 
-**service(), doGet(), doPost() 호출** -> 요청시 *매번*  
+`service(), doGet(), doPost() 호출` -> 요청시 매번
 
-**destroy() 호출** -> 마지막 *한번* (servlet 수정, 서버 재가동 등)  
+`destroy() 호출` -> 마지막 한번 (servlet 수정, 서버 재가동 등)  
    
   
 ---
@@ -98,13 +101,13 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
 *(출처: boostcourse)*  
 
 1. 요청할 때 가지고 들어온 다양한 정보들을  
-**HttpServletRequest객체**를 생성하여 저장
+***HttpServletRequest객체***를 생성하여 저장
 
 2. 웹 브라우저에 응답을 보낼 정보들을  
-**HttpServletResponse객체**를 생성하여 저장  
+***HttpServletResponse객체***를 생성하여 저장  
 
 3. 생성된 HttpServletRequest, HttpServletResponse 객체를  
-**서블릿에게 전달**
+***서블릿에게 전달***
 
 ----------
 
@@ -145,6 +148,7 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
 ---
   
 ## 파라미터 읽어 들이기
+
 URL주소의 파라미터 정보를 읽어 들여 브라우저 화면에 출력함  
   
 ```java
