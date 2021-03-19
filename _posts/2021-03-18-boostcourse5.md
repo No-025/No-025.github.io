@@ -5,7 +5,10 @@ toc_label: "자바스크립트"
 categories:
   - Javascript
 ---
-# 자바스트립트 문법
+
+---
+
+# 1. 자바스트립트 문법
 
 ## 자바스트립트 변수
 
@@ -36,7 +39,7 @@ categories:
 
 ---
 
-# 자바스크립트 함수
+# 2. 자바스크립트 함수
 
 
 ## 호이스팅(Hoisting)
@@ -49,6 +52,10 @@ categories:
 console.log("hello");
 var myname = "HEEE"; // var 변수
 ```
+
+>실행순서
+
+
 1. var myname = "HEEE";
 
 2. console.log("hello");
@@ -59,6 +66,10 @@ function ex() { // 함수선언문
           console.log("hello");
 }
 ```
+
+>실행순서
+
+
 1. function ex();  
 
 2. ex();
@@ -73,6 +84,7 @@ return값이 없으면 기본 반환값인 `undefined가 반환됨`
 
 
 ## arrow function
+
 ES2015에서 추가된 문법
 
 ```javascript
@@ -102,7 +114,7 @@ function bar(x){
 console.log(bar(6));
 ```
 
-**Call stack**
+> Call stack
 
 1. main()
 
@@ -115,7 +127,7 @@ console.log(bar(6));
 
 ---
 
-# Window 객체
+# 3. Window 객체
 
 많은 메서드가 존재하며`window.method()`에서 `window.`을 생략가능
 
@@ -141,7 +153,7 @@ function run() {
 run();
 ```
 
-**실행순서**
+> 실행순서
 
 1. start
 
@@ -154,7 +166,7 @@ run();
 ---
 
 
-# DOM(Document Object Model)
+# 4. DOM(Document Object Model)
 
 - 브라우저에서는 HTML코드를 DOM이라는 `객체형태의 모델`로 저장함
 
@@ -174,7 +186,7 @@ DOM API
 
 
 
-# 이벤트(Event)
+# 5. 이벤트(Event)
 
 ## 이벤트 등록
 
