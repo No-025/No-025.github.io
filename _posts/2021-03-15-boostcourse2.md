@@ -6,6 +6,8 @@ categories:
   - Servlet
 ---
 
+---
+
 # Servlet이란?
 
 `동적`인 처리를 하는 프로그램의 역할
@@ -15,10 +17,8 @@ categories:
 - `HTML은 JSP`로 표현, `복잡한 프로그래밍은 서블릿`으로 구현  
   
   
----
-  
-  
 ## Servlet 버전에 따른 작성방법
+
 
 ### **3.0이상** 버전
 
@@ -40,8 +40,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 }
 ```  
    
-  
----
+
   
           
 ### **3.0이하** 버전  
@@ -81,8 +80,6 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
 ```  
   
   
----
-  
   
 ## Serverlet 라이프사이클
 
@@ -94,8 +91,6 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
 
 `destroy() 호출` -> 마지막 한번 (servlet 수정, 서버 재가동 등)  
    
-  
----
   
    
 ## WAS가 웹브라우저로부터 요청 받으면
@@ -112,7 +107,8 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
 3. 생성된 HttpServletRequest, HttpServletResponse 객체를  
 `서블릿`에게 전달
 
-----------
+
+
 
 ## Header정보 읽어 들이기
 
@@ -148,8 +144,8 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
 	}	
 ```
   
----
-  
+
+
 ## 파라미터 읽어 들이기
 
 URL주소의 파라미터 정보를 읽어 들여 브라우저 화면에 출력함  
@@ -173,15 +169,16 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 }
 ```  
 
+
 >파라미터가 없는 경우
 >
 ![Parax](/assets/images/210315parax.png "Parax")  
+
 
 >파라미터가 있는 경우
 >
 ![Parao](/assets/images/210315parao.png "Parao")  
   
----
   
 ## 그외의 요청정보 출력하기
 
