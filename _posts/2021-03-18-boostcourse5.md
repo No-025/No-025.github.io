@@ -3,7 +3,6 @@ title: "210318-자바스크립트"
 toc: tru
 toc_label: "자바스크립트"
 categories:
-  - Spring
   - Javascript
 ---
 # 자바스트립트 문법
