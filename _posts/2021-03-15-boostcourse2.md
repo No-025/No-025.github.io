@@ -6,9 +6,9 @@ categories:
   - Servlet
 ---
 
-## Servlet이란?
+# Servlet이란?
 
-**동적**인 처리를 하는 프로그램의 역할
+`동적`인 처리를 하는 프로그램의 역할
 
 - WAS에서 동작하는 java클래스  
 - HttpServlet클래스를 상속받아야 함  
@@ -101,7 +101,7 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
 ## WAS가 웹브라우저로부터 요청 받으면
 
 ![Was](/assets/images/210315was.png "Was")  
-*(출처: boostcourse)*  
+**(출처: boostcourse)**
 
 1. 요청할 때 가지고 들어온 다양한 정보들을  
 `HttpServletRequest객체`를 생성하여 저장
