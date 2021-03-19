@@ -176,13 +176,16 @@ run();
 
 
 
-## getElementById() 과 querySelector()
+## getElementById()
 
-DOM API
+id를 통해 Element 객체를 반환
 
-`getElementById()`: id를 통해 Element 객체를 반환
 
-`querySelector()`: selector의 구체적인 그룹과 일치하는 첫번째  Element 객체를 반환, 더 구체적이고 한정적임
+## querySelector()
+
+selector의 구체적인 그룹과 일치하는 첫번째 Element 객체를 반환
+
+*더 구체적이고 한정적임
 
 
 ---
@@ -220,7 +223,11 @@ el.addEventListener("click", function(){
 
 ## 이벤트 객체
 
-이벤트 리스너를 호출할 때, 사용자로부터 어떤 이벤트가 발생했는지에 대한 `정보를 담은 이벤트 객체`를 생성해서 리스너 함수에 전달
+이벤트 리스너를 호출할 때, 
+
+사용자로부터 어떤 이벤트가 발생했는지에 대한 
+
+`정보를 담은 이벤트 객체`를 생성해서 리스너 함수에 전달
 
 ```javascript
 var el = document.getElementById("outside");
@@ -238,9 +245,11 @@ el.addEventListener("click", function(evt){
 
 
 
-# Ajax (Asynchronous Javascript And Xml)
+# Ajax(Asynchronous Javascript And Xml)
 
-- 브라우저가 가지고있는 XMLHttpRequest 객체를 이용하여 `페이지의 일부`만을 위한 데이터를 로드하는 기법
+- 브라우저가 가지고있는 XMLHttpRequest 객체를 이용하여 
+
+  `페이지의 일부`만을 위한 데이터를 로드하는 기법
 
 - 자바스크립트를 통해 서버에 데이터 요청함
 
@@ -266,7 +275,7 @@ el.addEventListener("click", function(evt){
 
 Ajax를 위한 대표적인 포맷
 
-```Json
+```JSON
 {
   "key": "반드시 큰따옴표로 둘러싸야한다",
   "value": "값은 string, number, boolean, array, object, null이 올 수있다",
