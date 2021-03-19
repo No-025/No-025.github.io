@@ -185,6 +185,8 @@ DOM API
 `querySelector()`: selector의 구체적인 그룹과 일치하는 첫번째  Element 객체를 반환, 더 구체적이고 한정적임
 
 
+---
+
 
 # 5. 이벤트(Event)
 
