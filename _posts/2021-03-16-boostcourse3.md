@@ -8,7 +8,9 @@ categories:
   - CSS
 ---
 
-## 이클립스에서 CSS 적용하기
+---
+
+# 이클립스에서 CSS 적용하기
 
 이클립스 Run as로 html을 켜면 css가 적용 안될 때가 있다.
 
