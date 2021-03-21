@@ -1,7 +1,7 @@
 ---
 title: "210319-JSP"
 toc: tru
-toc_label: "DB"
+toc_label: "JSP"
 categories:
   - JSP
 ---
