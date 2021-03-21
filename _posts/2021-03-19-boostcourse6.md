@@ -8,7 +8,7 @@ categories:
 
 ---
 
-# JSP
+# 1. JSP이란?
 
 - 서블릿의 단점을 보완하고자 만든 서블릿 기반의 스크립트 기술
 
@@ -158,7 +158,7 @@ JSP페이지에서 사용할 수 있는 주석
 ---
 
 
-# 리다이렉트 (redirect)
+# 2. 리다이렉트 (redirect)
 
 - HTTP프로토콜로 정해진 규칙
 
@@ -206,7 +206,7 @@ JSP페이지에서 사용할 수 있는 주석
 ---
 
 
-# forward
+# 3. forward
 
 서블릿이나 JSP가  request의 추가 처리를 위해 `다른 서블릿이나 JSP`에 정보 전달
 
@@ -256,7 +256,7 @@ protected void service(HttpServletRequest request, HttpServletResponse response)
 ---
 
 
-# redirect와 forward 차이
+# 4. redirect와 forward 차이
 
 - redirect는 URL이 변경되고, request 객체를 재사용하지 않음
 *2개의 request
@@ -271,7 +271,7 @@ protected void service(HttpServletRequest request, HttpServletResponse response)
 ---
 
 
-# servlet과 JSP 연동
+# 5. servlet과 JSP 연동
 
 프로그램 로직 수행은 Servlet에서, 결과 출력은 JSP에서 하는 것이 유리
  
