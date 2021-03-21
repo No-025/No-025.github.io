@@ -15,15 +15,7 @@ categories:
 - JSP가 실행되는 것이 아니라 서블릿으로 바뀜
 
 
-```JSP
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
-</head>
+```jsp
 <body>
 
 <% 
@@ -36,7 +28,6 @@ categories:
 1부터 10까지의 합 : <%=total %>
 
 </body>
-</html>
 ```
 
 
@@ -127,7 +118,7 @@ JSP페이지에서 사용할 수 있는 주석
 > HTML주석, 자바주석, JSP주석
 
 
-1. HTML 주석
+- HTML 주석
 
 `<!--  -->`
 
@@ -135,7 +126,7 @@ JSP페이지에서 사용할 수 있는 주석
 <!-- html 주석입니다. -->
 ```
 
-2. JSP 주석
+- JSP 주석
 
 `<%--  --%>`
 
@@ -143,7 +134,7 @@ JSP페이지에서 사용할 수 있는 주석
 <%-- JSP 주석입니다. --%>
 ```
 
-3. Java 주석
+- Java 주석
 
 `//, /*  */`
 
@@ -186,10 +177,11 @@ JSP페이지에서 사용할 수 있는 주석
 	response.sendRedirect("redirect02.jsp");
 
 %>
-```jsp
+```
 
 
 >redirect02.jsp
+>
 
 ```jsp
 <%@ page language="java" contentType="text/html; charset=UTF-8"
