@@ -1,5 +1,5 @@
 ---
-title: "210319-DB"
+title: "210319-JSP"
 toc: tru
 toc_label: "DB"
 categories:
@@ -261,7 +261,10 @@ protected void service(HttpServletRequest request, HttpServletResponse response)
 **(출처: 부스트코스)**
 
 
-## redirect와 forward 차이
+---
+
+
+# redirect와 forward 차이
 
 - redirect는 URL이 변경되고, request 객체를 재사용하지 않음
 *2개의 request
@@ -276,10 +279,52 @@ protected void service(HttpServletRequest request, HttpServletResponse response)
 ---
 
 
+# servlet과 JSP 연동
+
+프로그램 로직 수행은 Servlet에서, 결과 출력은 JSP에서 하는 것이 유리
+ 
+
+> `Servlet에서 프로그램 로직`이 수행되고, 그 결과를 `JSP에게 포워딩`
 
 
 
+## servlet과 JSP 연동 예제
+
+> LogicServlet.java
+> 
+
+```java
+protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	// TODO Auto-generated method stub
+	int v1 = (int)(Math.random() * 100) + 1;
+	int v2 = (int)(Math.random() * 100) + 1;
+        int result = v1 + v2;
+        
+        request.setAttribute("v1", v1);
+        request.setAttribute("v2", v2);
+        request.setAttribute("result", result);
+        
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/result.jsp");
+        requestDispatcher.forward(request, response);
+}
+```
 
 
+> result.jsp
+> 
+
+```jsp
+<body>
+스클립틀릿과 표현식을 이용해 출력합니다.<br>
+<%
+    int v1 = (int)request.getAttribute("v1");
+    int v2 = (int)request.getAttribute("v2");
+    int result = (int)request.getAttribute("result");
+%>
+
+<%=v1%> + <%=v2 %> = <%=result %>
+
+</body>
+```
 
 
