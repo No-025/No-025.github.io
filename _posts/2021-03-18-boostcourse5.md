@@ -245,7 +245,7 @@ el.addEventListener("click", function(evt){
 
 
 
-# Ajax(Asynchronous Javascript And Xml)
+# 6. Ajax(Asynchronous Javascript And Xml)
 
 - 브라우저가 가지고있는 XMLHttpRequest 객체를 이용하여 
 
