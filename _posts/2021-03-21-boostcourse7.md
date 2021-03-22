@@ -248,7 +248,7 @@ WEB-INF/lib 밑에 jar 파일을 넣어줌
 - URL 처리
 
 
-## - 코어 태그: 변수 지원 태그 - set, remove
+## - 변수 지원 태그: set, remove
 
 > set, remove 문법
 
@@ -260,7 +260,7 @@ WEB-INF/lib 밑에 jar 파일을 넣어줌
 - scope: 변수값이 저장될 영역 (page, request, session, application)
 - value: 변수값
 
-## - set, remove 예제
+### set, remove 예제
 
 
 ```java
@@ -282,7 +282,7 @@ WEB-INF/lib 밑에 jar 파일을 넣어줌
 
 ---
 
-## - 코어 태그: 변수 지원 태그 - 프로퍼티, 맵의 처리
+## - 변수 지원 태그: 프로퍼티, 맵의 처리
 
 
 > 프로퍼티, 맵의 처리 문법
@@ -303,7 +303,7 @@ some 객체가 `맵`일 경우, `some.put(propertyName, anyValue);`
 
 
 
-## - 코어 태그: 흐름제어 태그 - if
+## - 흐름제어 태그: if
 
 > if 문법
 
@@ -335,7 +335,7 @@ n은 과 10과 같습니다.
 ---
 
 
-## - 코어 태그: 흐름제어 태그 - choose
+## 흐름제어 태그: choose
 
 > choose 문법
 
@@ -384,7 +384,7 @@ n은 과 10과 같습니다.
 ```
 
 
-## - 코어 태그: 흐름제어 태그 - forEach
+## 흐름제어 태그: forEach
 
 > forEach 문법
 
@@ -426,7 +426,7 @@ ${item } <br>
 ---
 
 
-## - 코어 태그: 흐름제어 태그 - import
+## 흐름제어 태그: import
 
 > import 문법
 
@@ -456,7 +456,7 @@ ${item } <br>
 ---
 
 
-## - 코어 태그: 흐름제어 태그 - redirect
+## 흐름제어 태그: redirect
 
 > redirect 문법
 
@@ -482,7 +482,7 @@ ${item } <br>
 
 ---
 
-## - 코어 태그: 기타태그 - out
+## 기타태그: out
 
 > out 문법
 
