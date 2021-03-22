@@ -335,7 +335,7 @@ n은 과 10과 같습니다.
 ---
 
 
-## 흐름제어 태그: choose
+## - 흐름제어 태그: choose
 
 > choose 문법
 
@@ -384,7 +384,7 @@ n은 과 10과 같습니다.
 ```
 
 
-## 흐름제어 태그: forEach
+## - 흐름제어 태그: forEach
 
 > forEach 문법
 
@@ -426,7 +426,7 @@ ${item } <br>
 ---
 
 
-## 흐름제어 태그: import
+## - 흐름제어 태그: import
 
 > import 문법
 
@@ -456,7 +456,7 @@ ${item } <br>
 ---
 
 
-## 흐름제어 태그: redirect
+## - 흐름제어 태그: redirect
 
 > redirect 문법
 
@@ -482,7 +482,7 @@ ${item } <br>
 
 ---
 
-## 기타태그: out
+## - 기타태그: out
 
 > out 문법
 
