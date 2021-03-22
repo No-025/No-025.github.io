@@ -19,27 +19,27 @@ categories:
 ## - 데이터베이스의 4가지 특성
 
 
-### 실시간 접근성(Real-time Accessability)  
+#### 실시간 접근성(Real-time Accessability)  
 
 사용자의 요구를 즉시 처리
 
 
 
 
-### 계속적인 변화(Continuous Evolution)  
+#### 계속적인 변화(Continuous Evolution)  
 
  정확한 값을 유지하고 데이터를 지속적으로 갱신
 
 
 
 
-### 동시 공유성(Concurrent Sharing)  
+#### 동시 공유성(Concurrent Sharing)  
 
  동시에 여러 사람이 동일한 데이터에 접근하고 이용가능
  
 
 
-### 내용 참조(Content Reference)  
+#### 내용 참조(Content Reference)  
 
 사용자가 요구하는 데이터의 내용, 즉 데이터 값에 따라 참조가능
 
@@ -55,16 +55,16 @@ categories:
 
 ## - DBMS 필수 3가지 기능
 
-### 정의기능
+#### 정의기능
 
 데이터 베이스의 `논리적, 물리적 구조를 정의`  
 
 
-### 조작기능
+#### 조작기능
 데이터를 `검색, 삭제, 갱신, 삽입, 삭제`하는 기능 
 
  
-### 제어기능
+#### 제어기능
 데이터베이스의 내용 `정확성과 안전성을 유지`하도록 제어하는 기능
 
 
@@ -73,14 +73,14 @@ categories:
 
 ## - DBMS 장단점
 
-### 장점  
+#### 장점  
 - 데이터 중복이 최소화
 - 데이터의 일관성 및 무결성 유지
 - 데이터 보안 보장
     
     
   
-### 단점
+#### 단점
 - 운영비가 비쌈
 - 백업 및 복구에 대한 관리가 복잡
 - 부분적 데이터베이스 손실이 전체 시스템을 정지
@@ -95,19 +95,19 @@ categories:
 ## - SQL 문법 3가지
 
 
-### DML (Data Manipulation Language)
+#### DML (Data Manipulation Language)
 
 - `데이터를 조작`
 - INSERT, UPDATE, DELETE, SELECT 등
 
 
 
-### DDL (Data Definition Language)
+#### DDL (Data Definition Language)
 - 데이터베이스의 `스키마를 정의하거나 조작`
 - CREATE, DROP, ALTER 등
 
 
-### DCL (Data Control Language)
+#### DCL (Data Control Language)
 - `데이터를 제어`
 - 권한을 관리하고, 테이터의 보안, 무결성 등을 정의
 - GRANT, REVOKE 등
@@ -185,7 +185,7 @@ mysql> SELECT VERSION(), CURRENT_DATE;
 
 ## - 쿼리문
 
-### 키워드는 대소문자를 구별하지 않음
+#### 키워드는 대소문자를 구별하지 않음
 
 ```markup
 mysql> SELECT VERSION(), CURRENT_DATE;
@@ -195,20 +195,20 @@ mysql> SeLeCt vErSiOn(), current_DATE;
 모두 같은 결과
 
 
-### 쿼리를 이용해서 계산식의 결과 구하기
+#### 쿼리를 이용해서 계산식의 결과 구하기
 
 ```markup
 mysql> SELECT SIN(PI()/4), (4+1)*5;
 ```
 
 
-### 여러 문장을 한 줄에 연속으로 붙여서 실행가능
+#### 여러 문장을 한 줄에 연속으로 붙여서 실행가능
 ```markup
 mysql> SELECT VERSION(); SELECT NOW();
 ```
 
 
-### 하나의 SQL은 여러 줄로 입력가능
+#### 하나의 SQL은 여러 줄로 입력가능
 
 ```markup
 mysql> SELECT
@@ -218,7 +218,7 @@ mysql> SELECT
 ```
 
 
-### SQL을 입력하는 도중에 취소하기
+#### SQL을 입력하는 도중에 취소하기
 
 ```markup
 mysql> SELECT
@@ -226,13 +226,13 @@ mysql> SELECT
 mysql>
 ```
 
-### DBMS에 존재하는 데이터베이스 확인
+#### DBMS에 존재하는 데이터베이스 확인
 
 ```markup
 mysql> show databases;
 ```
 
-### 사용중인 데이터베이스 전환하기
+#### 사용중인 데이터베이스 전환하기
 
 ```markup
 mysql> use mydb;
@@ -243,20 +243,21 @@ mysql> use mydb;
 
 ## - Table(테이블)
 
-### 테이블(Table)
+#### 테이블(Table)
 RDBMS의 기본적 저장구조 한 개 이상의 column과 0개 이상의 row로 구성
 
-### 열(Column)
+#### 열(Column)
 - 테이블 상에서의 단일 종류의 데이터
 - 특정 데이터 타입 및 크기를 갖음
 
-### 행(Row) 
+#### 행(Row) 
 - Column들의 값의 조합
 - `레코드`라고 불림
 - 기본키(PK)에 의해 구분
 - `기본키는 중복을 허용하지 않음`
 
-### Field
+
+#### Field
 - Row와 Column의 교차점
 - 데이터를 포함할 수 있고 없을 때는 NULL 값
 
@@ -309,7 +310,7 @@ mysql> desc employee;
 - FROM: 선택한 칼럼이 있는 테이블 명시
 
 
-### SELECT 전체 데이터 검색
+#### SELECT 전체 데이터 검색
 
 > \*
 
@@ -319,7 +320,7 @@ SELECT * FROM  DEPARTMENT;
 
 
 
-### SELECT 특정 컬럼 검색
+#### SELECT 특정 컬럼 검색
 
 > 콤마(,)
 
@@ -329,7 +330,7 @@ SELECT empno, name, job from employee;
 
 
 
-### SELECT 컬럼에 Alias부여하기
+#### SELECT 컬럼에 Alias부여하기
 
 > ALIAS(별칭)
 
@@ -340,7 +341,7 @@ select empno as 사번, name as 이름, job as 직업 from employee;
 
 
 
-### SELECT 컬럼의 합성(Concatenation)
+#### SELECT 컬럼의 합성(Concatenation)
 
 > concat
 
@@ -352,7 +353,7 @@ FROM employee;
 
 
 
-### SELECT 중복행의 제거
+#### SELECT 중복행의 제거
 
 > DISTINCT 키워드
 
@@ -363,7 +364,7 @@ select distinct deptno from employee;
 
 
 
-### SELECT  정렬하기
+#### SELECT  정렬하기
 
 > 오름차순 ORDER BY
 
@@ -378,7 +379,7 @@ select empno, name, job from employee order by name desc;
 ```
 
 
-### SELECT 특정 행 검색- where절
+#### SELECT 특정 행 검색- where절
 
 >where
 
@@ -404,7 +405,7 @@ select name, job from employee where name like '%A%';
 
 
 
-### SELECT 함수의 사용
+#### SELECT 함수의 사용
 
 > UCASE, UPPER: 대문자 변환
 
@@ -448,7 +449,7 @@ mysql> SELECT MOD(234,10), 253 % 7, MOD(29,9);
 ```
 
 
-### SELECT 구문(함수의 사용)
+#### SELECT 구문(함수의 사용)
 
 -   FLOOR(x) : x보다 크지 않은 가장 큰 정수를 반환(BIGINT로 자동 변환)
 -   CEILING(x) : x보다 작지 않은 가장 작은 정수를 반환
@@ -464,7 +465,7 @@ mysql> SELECT MOD(234,10), 253 % 7, MOD(29,9);
 
 
 
-### SELECT 형변환
+#### SELECT 형변환
 
 > CAST: 형변환
 
@@ -474,7 +475,7 @@ mysql> select cast(now() as date);
 
 
 
-### SELECT 그룹함수
+#### SELECT 그룹함수
 
 - SUM(expr): 그룹의 누적 합계를 반환
 - AVG(expr): 그룹의 평균을 반환
@@ -488,7 +489,7 @@ mysql> select cast(now() as date);
 SELECT AVG(salary) , SUM(salary) FROM employee WHERE deptno = 30;
 ```
 
-### SELECT groupby 절
+#### SELECT groupby 절
 
 > [GROUP  BY 단순컬럼]
 
