@@ -17,7 +17,7 @@ categories:
 - `HTML은 JSP`로 표현, `복잡한 프로그래밍은 서블릿`으로 구현  
   
   
-## Servlet 버전에 따른 작성방법
+## - Servlet 버전에 따른 작성방법
 
 
 ### **3.0이상** 버전
@@ -81,7 +81,7 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
   
   
   
-## Serverlet 라이프사이클
+## - Serverlet 라이프사이클
 
 `Servlet 객체 생성` -> 최초 한번  
 
@@ -93,7 +93,7 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
    
   
    
-## WAS가 웹브라우저로부터 요청 받으면
+## - WAS가 웹브라우저로부터 요청 받으면
 
 ![Was](/assets/images/210315was.png "Was")  
 **(출처: boostcourse)**
@@ -110,7 +110,7 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
 
 
 
-## Header정보 읽어 들이기
+## - Header정보 읽어 들이기
 
 ```java
 /**
@@ -146,7 +146,7 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
   
 
 
-## 파라미터 읽어 들이기
+## - 파라미터 읽어 들이기
 
 URL주소의 파라미터 정보를 읽어 들여 브라우저 화면에 출력함  
   
@@ -180,7 +180,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 ![Parao](/assets/images/210315parao.png "Parao")  
   
   
-## 그외의 요청정보 출력하기
+## - 그외의 요청정보 출력하기
 
 ```java
 protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
