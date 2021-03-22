@@ -32,7 +32,7 @@ categories:
 
 
 
-## 서블릿과 JSP 비교
+## - 서블릿과 JSP 비교
 
 기능의 차이는 없고 `역할의 차이`
 
@@ -53,7 +53,7 @@ categories:
 
 
 
-## JSP 실행순서
+## - JSP 실행순서
 
 1.  브라우저가 웹서버에 JSP에 대한 요청 정보를 전달한다.
 
@@ -67,7 +67,7 @@ categories:
 
 
 
-## JSP 라이프 싸이클
+## - JSP 라이프 싸이클
 
 서블릿과 동일
 
@@ -77,7 +77,7 @@ categories:
 
 `destroy() 호출` -> 마지막 한번
 
-## JSP 문법
+## - JSP 문법
 
 `<% %>` - 스크립트릿, 프로그래밍 코드 기술
   
@@ -111,7 +111,7 @@ categories:
 
 
 
-## 주석
+## - 주석
 
 JSP페이지에서 사용할 수 있는 주석
 
@@ -146,7 +146,7 @@ JSP페이지에서 사용할 수 있는 주석
 ```
 
 
-## JSP 내장 객체
+## - JSP 내장 객체
 
 - JSP가 서블릿 소스로 생성되고 실행될 때, _jspService()에 삽입된 코드의 윗부분에 `미리 선언된 객체들`
 
@@ -166,7 +166,7 @@ JSP페이지에서 사용할 수 있는 주석
 
 
 
-## 리다이렉트 예제
+## - 리다이렉트 예제
 
 >redirect01.jsp
 
@@ -210,7 +210,7 @@ JSP페이지에서 사용할 수 있는 주석
 
 서블릿이나 JSP가  request의 추가 처리를 위해 `다른 서블릿이나 JSP`에 정보 전달
 
-## forward 예제
+## - forward 예제
 
 
 >FrontServlet
@@ -280,7 +280,7 @@ protected void service(HttpServletRequest request, HttpServletResponse response)
 
 
 
-## servlet과 JSP 연동 예제
+## - servlet과 JSP 연동 예제
 
 > LogicServlet.java
 > 
