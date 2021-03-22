@@ -275,7 +275,7 @@ el.addEventListener("click", function(evt){
 
 Ajax를 위한 대표적인 포맷
 
-```JSON
+```json
 {
   "key": "반드시 큰따옴표로 둘러싸야한다",
   "value": "값은 string, number, boolean, array, object, null이 올 수있다",
