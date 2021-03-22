@@ -10,13 +10,13 @@ categories:
 
 # 1. 자바스트립트 문법
 
-## 자바스트립트 변수
+## - 자바스트립트 변수
 
 `var, let, const`로 선언
 
 
 
-## 자바스크립트의 비교연산자
+## - 자바스크립트의 비교연산자
 
 ==보다 타입까지 비교하는 `===`를 사용(**권장**) 
 
@@ -26,7 +26,7 @@ categories:
 ```
 
 
-## 자바스크립트의 Type
+## - 자바스크립트의 Type
 
 타입은 선언할 때가 아니라, `실행타임`에 결정됨
 
@@ -42,7 +42,7 @@ categories:
 # 2. 자바스크립트 함수
 
 
-## 호이스팅(Hoisting)
+## - 호이스팅(Hoisting)
 
 함수 안에 있는 선언들을 모두 끌어 올려서 해당 함수 유효 범위의 `최상단에 선언`하는 것
 
@@ -75,7 +75,7 @@ function ex() { // 함수선언문
 2. ex();
 
 
-## 함수의 반환값
+## - 함수의 반환값
 
 return값이 없으면 기본 반환값인 `undefined가 반환됨`
 
@@ -83,7 +83,7 @@ return값이 없으면 기본 반환값인 `undefined가 반환됨`
 
 
 
-## arrow function
+## - arrow function
 
 ES2015에서 추가된 문법
 
@@ -98,7 +98,7 @@ var getName = (name) =>"kim" + name;
 
 
 
-## 자바스크립트 함수 호출 스택
+## - 자바스크립트 함수 호출 스택
 
 ```javascript
 function foo(b){
@@ -132,7 +132,7 @@ console.log(bar(6));
 많은 메서드가 존재하며`window.method()`에서 `window.`을 생략가능
 
 
-## setTimeout()
+## - setTimeout()
 
 - 인자로 함수를 받는 `콜백함수`
 
@@ -176,12 +176,12 @@ run();
 
 
 
-## getElementById()
+## - getElementById()
 
 id를 통해 Element 객체를 반환
 
 
-## querySelector()
+## - querySelector()
 
 selector의 구체적인 그룹과 일치하는 첫번째 Element 객체를 반환
 
@@ -193,7 +193,7 @@ selector의 구체적인 그룹과 일치하는 첫번째 Element 객체를 반�
 
 # 5. 이벤트(Event)
 
-## 이벤트 등록
+## - 이벤트 등록
 
 - `addEventListener 함수`를 사용
 
@@ -221,7 +221,7 @@ el.addEventListener("click", function(){
 ```
 
 
-## 이벤트 객체
+## - 이벤트 객체
 
 이벤트 리스너를 호출할 때, 
 
@@ -256,7 +256,7 @@ el.addEventListener("click", function(evt){
 *`비동기 방식`: 웹페이지를 리로드하지않고 데이터를 불러오는 방식
 
 
-## AJAX의 동작 과정
+## - AJAX의 동작 과정
 
 1. 이벤트 발생
 
@@ -271,7 +271,7 @@ el.addEventListener("click", function(evt){
 6. 요청한 일부분만 갱신
 
 
-##  Json 포맷
+## - Json 포맷
 
 Ajax를 위한 대표적인 포맷
 
