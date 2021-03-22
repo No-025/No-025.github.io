@@ -11,21 +11,21 @@ categories:
 
 # 1. 웹 기초
 
-## HTTP
+## - HTTP
 
 클라이언트가 요청, 서버가 응답  
 - 장: 많은 요청과 응답 처리가 가능  
 - 단: 무상태(stateless)
 
-## URL
+## - URL
 
 인터넷 상의 자원 위치  
 
-## WEB서버
+## - WEB서버
 
 클라이언트가 요청하는 **정적**인 데이터 처리하는 웹서버  
 
-## WAS서버 
+## - WAS서버 
 클라이언트가 요청하는 **동적**인 데이터 처리하는 웹서버  
 \*대부분 WAS는 **정적**인 컨텐츠를 제공해줌  
 
@@ -33,7 +33,7 @@ categories:
 
 # 2. CSS: style을 HTML페이지에 적용하는 3가지 방법
 
-## inline
+## - inline
 
 가장 먼저 적용됨  
 
@@ -41,7 +41,7 @@ categories:
 <p style="border:1px solid gray; color:red; font-size:2em;">
 ```  
 
-## internal
+## - internal
 
 css파일을 관리할 필요없지만 유지보수 어려움  
 
@@ -57,7 +57,7 @@ p  {
 </head>
 ```  
 
-## external
+## - external
 
 외부파일(.css)로 지정하는 방식(**권장**) 
 
