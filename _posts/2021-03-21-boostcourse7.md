@@ -1,7 +1,7 @@
 ---
-title: "210321-Scope와 JSTL & EL"
+title: "210321-Scope와 JSTL와 EL"
 toc: tru
-toc_label: "Scope와 JSTL & EL"
+toc_label: "Scope와 JSTL EL"
 categories:
   - JSP
 ---
@@ -14,7 +14,7 @@ categories:
 
 `Page < Request < Session < Application`
 
-## Page Scope
+## - Page Scope
 
 한 번의 request를 처리하는 `하나의 JSP페이지`내에서 저장 및 공유하기 위해서 사용
 
@@ -25,7 +25,7 @@ categories:
 
 
 
-## Request Scope
+## - Request Scope
 
 한 번의 reqeust를 처리하는 데 사용되는 `모든 JSP페이지`에서 저장 및 공유하기 위해서 사용
 
@@ -37,7 +37,7 @@ categories:
 
 
 
-## Session Scope
+## - Session Scope
 
 로그인 정보같은 `한 명의 uesr`와 관련된 정보를 저장 및 공유하기 위해서 사용
 
@@ -48,7 +48,7 @@ categories:
 
 
 
-## Application Scope
+## - Application Scope
 
 게시판같이 `모든 사용자`와 관련된 정보를 저장 및 공유하기 위해서 사용
 
@@ -58,7 +58,7 @@ categories:
 
 
 
-###  Application Scope 예제
+### Application Scope 예제
 
 > ApplicationScope01.java
 
@@ -121,20 +121,14 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 
 ---
 
-
-# 2. JSTL & EL
-
-백엔드보다 프론트엔드개발자를 위한 언어
-
-
-## EL
+# 2. EL
 
 값을 표현하는 데 사용되는 스크립트 언어로서 JSP의 기본 문법을 보완하는 역할을 하는 
 `표현언어`
 
 
 
-### 표현 언어가 제공하는 기능
+## - 표현 언어가 제공하는 기능
 
 -   JSP의 `스코프(scope)에 맞는 속성` 사용
 -   집합 객체에 대한 접근 방법 제공
@@ -144,7 +138,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 
 
 
-### 표현언어의 표현방법
+## - 표현언어의 표현방법
 
 > ${expr }
 
@@ -153,7 +147,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 ```
 
 
-### 표현 언어의 데이터 타입
+## - 표현 언어의 데이터 타입
 
 -   불리언 타입
 -   정수타입 - 음수의 경우 '-'가 붙음
@@ -163,7 +157,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 -   널 타입 - null
 
 
-### 객체 접근 규칙
+## - 객체 접근 규칙
 
 >${<표현1>,<표현2>}
 
@@ -175,7 +169,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 
 
 
-### 표현 언어 비활성화 : JSP에 명시하기
+## - 표현 언어 비활성화 : JSP에 명시하기
 
 ```java
 <%@ page isELIgnored = "true" %>
@@ -183,7 +177,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 
 
 
-#### EL 예제
+### EL 예제
 
 ```java
 <%
@@ -222,13 +216,13 @@ m : ${ m } <br>
 ---
 
 
-## JSTL
+# 3. JSTL
 
 JSP 페이지에서 조건문 처리, 반복문 처리 등을 `html tag형태`로 작성할 수 있는 JSP 확장태그
 
 
 
-### JSTL 사용하기
+## - JSTL 사용하기
 
 [ JSTL 1.2.5](http://tomcat.apache.org/download-taglibs.cgi)
 
@@ -241,14 +235,20 @@ WEB-INF/lib 밑에 jar 파일을 넣어줌
 - taglibs-standard-jstlel-1.2.5.jar
 
 
-### JSTL 코어태그
+## - JSTL 코어태그
 
 ```java
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 ```
 
+접두어: c
 
-#### 코어 태그: 변수 지원 태그 - set, remove
+- 변수지원
+- 흐름제어
+- URL 처리
+
+
+## - 코어 태그: 변수 지원 태그 - set, remove
 
 > set, remove 문법
 
@@ -260,7 +260,7 @@ WEB-INF/lib 밑에 jar 파일을 넣어줌
 - scope: 변수값이 저장될 영역 (page, request, session, application)
 - value: 변수값
 
-##### set, remove 예제
+## - set, remove 예제
 
 
 ```java
@@ -282,7 +282,7 @@ WEB-INF/lib 밑에 jar 파일을 넣어줌
 
 ---
 
-#### 코어 태그: 변수 지원 태그 - 프로퍼티, 맵의 처리
+## - 코어 태그: 변수 지원 태그 - 프로퍼티, 맵의 처리
 
 
 > 프로퍼티, 맵의 처리 문법
@@ -303,7 +303,7 @@ some 객체가 `맵`일 경우, `some.put(propertyName, anyValue);`
 
 
 
-#### 코어 태그: 흐름제어 태그 - if
+## - 코어 태그: 흐름제어 태그 - if
 
 > if 문법
 
@@ -312,7 +312,7 @@ some 객체가 `맵`일 경우, `some.put(propertyName, anyValue);`
 </c:if>
 ```
 
-#####  if 예제
+###  if 예제
 
 ```java
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
@@ -335,7 +335,7 @@ n은 과 10과 같습니다.
 ---
 
 
-#### 코어 태그: 흐름제어 태그 - choose
+## - 코어 태그: 흐름제어 태그 - choose
 
 > choose 문법
 
@@ -350,7 +350,7 @@ n은 과 10과 같습니다.
 </c:choose>
 ```
 
-##### choose 예제
+### choose 예제
 
 
 ```java
@@ -384,7 +384,7 @@ n은 과 10과 같습니다.
 ```
 
 
-#### 코어 태그: 흐름제어 태그 - forEach
+## - 코어 태그: 흐름제어 태그 - forEach
 
 > forEach 문법
 
@@ -401,7 +401,7 @@ ${변수}
 
 
 
-##### forEach 예제
+### forEach 예제
 
 ```java
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
@@ -426,7 +426,7 @@ ${item } <br>
 ---
 
 
-#### 코어 태그: 흐름제어 태그 - import
+## - 코어 태그: 흐름제어 태그 - import
 
 > import 문법
 
@@ -439,7 +439,7 @@ ${item } <br>
 - var: 읽어온 결과를 저장할 변수명
 - scope: 변수를 저장할 영역
 
-##### import 예제
+### import 예제
 
 ```java
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
@@ -456,7 +456,7 @@ ${item } <br>
 ---
 
 
-#### 코어 태그: 흐름제어 태그 - redirect
+## - 코어 태그: 흐름제어 태그 - redirect
 
 > redirect 문법
 
@@ -468,7 +468,7 @@ ${item } <br>
 -url: 리다이렉트할 URL
 
 
-##### redirect 예제
+### redirect 예제
 
 ```java
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
@@ -482,7 +482,7 @@ ${item } <br>
 
 ---
 
-#### 코어 태그: 기타태그 - out
+## - 코어 태그: 기타태그 - out
 
 > out 문법
 
@@ -495,7 +495,7 @@ ${item } <br>
 - default: value 속성에서 지정한 값이 존재하지 않을 때 사용될 값을 지정
 
 
-##### out 예제
+### out 예제
 
 ```java
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
