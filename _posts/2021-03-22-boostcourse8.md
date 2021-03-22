@@ -287,6 +287,8 @@ mysql> -uconnectuser  -p  connectdb   <  examples.sql
 mysql> desc employee;
 ```
 
+---
+
 
 # 4. DML(select, insert, update, delete)
 
