@@ -121,6 +121,7 @@ mysql> –uroot  -p
 ```
 
 관리자 계정인 root로 접속
+
 *설치 시 입력했던 암호 입력
 
 
@@ -137,6 +138,7 @@ mysql> create database connectdb;
 ## - MySQL 사용자 생성
 
 > create user '아이디'@'%' identified by '비밀번호';
+> 
 > flush privileges;
 
 
@@ -154,6 +156,7 @@ flush privileges;
 ## - MySQL 사용자 권한
 
 > grant all privileges on *.* to '아이디'@'%';
+> 
 > FLUSH PRIVILEGES;
 
 ```markup
@@ -174,6 +177,7 @@ mysql> –h127.0.0.1 –uconnectuser –p connectdb [enter]
 ## - MySQL 연결끊기
 
 > mysql> QUIT
+> 
 > mysql> exit
 
 
@@ -192,7 +196,8 @@ mysql> SELECT VERSION(), CURRENT_DATE;
 mysql> select version(), current_date;
 mysql> SeLeCt vErSiOn(), current_DATE;
 ```
-모두 같은 결과
+
+모두 `같은 결과`
 
 
 ### 쿼리를 이용해서 계산식의 결과 구하기
@@ -244,10 +249,13 @@ mysql> use mydb;
 ## - Table(테이블)
 
 ### 테이블(Table)
-RDBMS의 기본적 저장구조 한 개 이상의 column과 0개 이상의 row로 구성
+RDBMS의 기본적 저장구조 한 개 이상의 `column`과 
+
+0개 이상의 `row`로 구성
+
 
 ### 열(Column)
-- 테이블 상에서의 단일 종류의 데이터
+- 테이블 상에서의 `단일 종류의 데이터`
 - 특정 데이터 타입 및 크기를 갖음
 
 ### 행(Row) 
@@ -273,7 +281,9 @@ mysql> show tables;
 
 ## - SQL파일로 테이블 생성 및 값 저장
 
-터미널에서 파일이 있는 폴더로 이동
+터미널에서 `파일이 있는 폴더로 이동`
+
+
 > mysql >  –uDB계정명 –p 데이터베이스이름   <  파일명.sql
 
 ```markup
@@ -332,7 +342,7 @@ SELECT empno, name, job from employee;
 
 ### SELECT 컬럼에 Alias부여하기
 
-> ALIAS(별칭)
+> as
 
 ```markup
 select empno as 사번, name as 이름, job as 직업 from employee;
@@ -355,7 +365,7 @@ FROM employee;
 
 ### SELECT 중복행의 제거
 
-> DISTINCT 키워드
+> DISTINCT
 
 ```markup
 select distinct deptno from employee;
@@ -372,6 +382,8 @@ select distinct deptno from employee;
 select empno as 사번, name as 이름, job as 직업 from employee order by 이름;
 ```
 
+---
+
 > 내림차순 desc
 
 ```markup
@@ -379,7 +391,7 @@ select empno, name, job from employee order by name desc;
 ```
 
 
-### SELECT 특정 행 검색- where절
+### SELECT 특정 행 검색
 
 >where
 
@@ -388,12 +400,16 @@ select name, hiredate from employee where hiredate < '1981-01-01';
 
 select name, deptno from employee where deptno = 30;
 ```
+
+---
+
 >IN
 
 ```markup
 select name, deptno from employee where deptno in (10, 30);
 ```
 
+---
 
 >like
 
@@ -413,20 +429,32 @@ select name, job from employee where name like '%A%';
 mysql> SELECT UPPER('SEoul'), UCASE('seOUL');
 ```
 
+---
+
+
 > LCASE, LOWER: 소문자 변환
 ```markup
 mysql> SELECT LOWER('SEoul'), LCASE('seOUL');
 ```
+
+---
+
 
 > substring: 문자열 자르기
 ```markup
 mysql> SELECT SUBSTRING('Happy Day',3,2);
 ```
 
+---
+
+
 > LPAD, RPAD: 공백 채우기
 ```markup
 mysql> SELECT LPAD('hi',5,'?'),LPAD('joe',7,'*');
 ```
+
+---
+
 
 
 > TRIM, LTRIM, RTRIM: 공백 제거
@@ -435,11 +463,16 @@ mysql> SELECT LPAD('hi',5,'?'),LPAD('joe',7,'*');
 mysql> SELECT LTRIM(' hello '), RTRIM(' hello ');
 ```
 
+---
+
+
 > ABS(x) : x의 절대값
 
 ```markup
 mysql> SELECT ABS(2), ABS(-2);
 ```
+
+---
 
 
 > MOD(n,m) % : n을 m으로 나눈 나머지 값을 출력
@@ -542,7 +575,88 @@ delete from ROLE where role_id = 200;
 ---
 
 
-# 5. DDL
+# 5. DDL(create, drop)
+
+
+## - 테이블생성
+
+> create table 테이블명( 
+          필드명1 타입 [NULL | NOT NULL][DEFAULT ][AUTO_INCREMENT], 
+          필드명2 타입 [NULL | NOT NULL][DEFAULT ][AUTO_INCREMENT], 
+          필드명3 타입 [NULL | NOT NULL][DEFAULT ][AUTO_INCREMENT], 
+          ........... 
+          PRIMARY KEY(필드명) 
+          );
+
+```markup
+CREATE TABLE EMPLOYEE2(   
+            empno      INTEGER NOT NULL PRIMARY KEY,  
+           name       VARCHAR(10),   
+           job        VARCHAR(9),   
+           boss       INTEGER,   
+           hiredate   VARCHAR(12),   
+           salary     DECIMAL(7, 2),   
+           comm       DECIMAL(7, 2),   
+          deptno     INTEGER);
+```
+
+
+### 테이블 컬럼 추가
+
+
+>alter table 테이블명
+          add  필드명 타입 [NULL | NOT NULL][DEFAULT ][AUTO_INCREMENT];
+
+```markup
+alter table EMPLOYEE2
+
+add birthdate varchar(12);
+```
+
+
+### 테이블 컬럼 삭제
+
+>alter table 테이블명
+         drop  필드명;
+
+```markup
+alter table EMPLOYEE2
+
+drop birthdate;​
+```
+
+
+### 테이블 컬럼 수정
+
+> alter table  테이블명 
+change  필드명  새필드명 타입 [NULL | NOT NULL][DEFAULT ][AUTO_INCREMENT];
+
+
+
+```markup
+alter table EMPLOYEE2
+
+change deptno dept_no int(11);
+```
+
+
+### 테이블 이름 변경
+
+>alter table  테이블명 rename 변경이름;
+
+```markup
+alter table EMPLOYEE2 rename EMPLOYEE3;
+```
+
+
+## - 테이블 삭제
+
+>drop table 테이블이름;
+
+```markup
+drop table EMPLOYEE2;
+```
+
 
 
 
