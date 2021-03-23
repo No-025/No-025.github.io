@@ -353,7 +353,7 @@ n은 과 10과 같습니다.
 ### choose 예제
 
 
-```java
+```j
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 <%@ page import="java.util.*" %>
 <%
@@ -403,7 +403,7 @@ ${변수}
 
 ### forEach 예제
 
-```java
+```jsp
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 <%@ page import="java.util.*" %>
 <%
