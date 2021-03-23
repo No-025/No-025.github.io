@@ -4,8 +4,6 @@ toc: tru
 toc_label: "CSS 적용하기"
 categories:
   - Eclipse
-  - HTML
-  - CSS
 ---
 
 ---
