@@ -1,7 +1,7 @@
 ---
-title: "210321-Scope와 JSTL와 EL"
+title: "210321-Scope와 JSTL, EL"
 toc: tru
-toc_label: "Scope와 JSTL EL"
+toc_label: "Scope와 JSTL, EL"
 categories:
   - JSP
 ---
