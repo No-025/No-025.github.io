@@ -116,7 +116,7 @@ categories:
 
 ## - MySQL Database 접속하기
 
-```markup
+```sql
 mysql> –uroot  -p
 ```
 
@@ -131,7 +131,7 @@ mysql> –uroot  -p
 
 > mysql> **create** database DB이름;
 
-```markup
+```sql
 mysql> create database connectdb;
 ```
 
@@ -146,7 +146,7 @@ mysql> create database connectdb;
 - @’localhost’는 해당 컴퓨터에서만 접근 가능
 - flush privileges는 DBMS에게 적용을 하라는 의미
 
-```markup
+```sql
 create user 'connectuser'@'%' identified by 'connect123!@#';
 
 flush privileges;
@@ -159,7 +159,7 @@ flush privileges;
 > 
 > FLUSH PRIVILEGES;
 
-```markup
+```sql
 grant all privileges on connectdb.* to 'connectuser'@'%';
 
 flush privileges;
@@ -169,7 +169,7 @@ flush privileges;
 
 > mysql –h호스트명 –uDB계정명 –p 데이터베이스이름
 
-```markup
+```sql
 mysql> –h127.0.0.1 –uconnectuser –p connectdb [enter]
 ```
 
@@ -183,7 +183,7 @@ mysql> –h127.0.0.1 –uconnectuser –p connectdb [enter]
 
 ## - MySQL 버전과 현재 날짜 구하기
 
-```markup
+```sql
 mysql> SELECT VERSION(), CURRENT_DATE;
 ```
 
@@ -233,7 +233,7 @@ mysql> SELECT VERSION(), CURRENT_DATE;
 
 ### 사용중인 데이터베이스 전환하기
 
-> mysql> **use** ;
+> mysql> **use** 데이터베이스명 ;
 
 
 ---
@@ -278,7 +278,7 @@ RDBMS의 기본적 저장구조 1개 이상의 `column`과
 
 > mysql >  –uDB계정명 –p 데이터베이스이름   <  파일명.sql
 
-```markup
+```sql
 mysql> -uconnectuser  -p  connectdb   <  examples.sql
 ```
 
@@ -286,7 +286,7 @@ mysql> -uconnectuser  -p  connectdb   <  examples.sql
 
 > mysql> **desc** 테이블명;
 
-```markup
+```sql
 mysql> desc employee;
 ```
 
@@ -316,7 +316,7 @@ mysql> desc employee;
 
 > \*
 
-```markup
+```sql
 SELECT * FROM  DEPARTMENT;
 ```
 
@@ -326,7 +326,7 @@ SELECT * FROM  DEPARTMENT;
 
 > 콤마(,)
 
-```markup
+```msql
 SELECT empno, name, job from employee;
 ```
 
@@ -336,7 +336,7 @@ SELECT empno, name, job from employee;
 
 > as
 
-```markup
+```sql
 select empno as 사번, name as 이름, job as 직업 from employee;
 ```
 
@@ -347,7 +347,7 @@ select empno as 사번, name as 이름, job as 직업 from employee;
 
 > concat
 
-```markup
+```sql
 SELECT concat( empno, '-', deptno) AS '사번-부서번호' 
 FROM employee;
 ```
@@ -359,7 +359,7 @@ FROM employee;
 
 > DISTINCT
 
-```markup
+```sql
 select distinct deptno from employee;
 ```
 
@@ -370,7 +370,7 @@ select distinct deptno from employee;
 
 > 오름차순 ORDER BY
 
-```markup
+```sql
 select empno as 사번, name as 이름, job as 직업 from employee order by 이름;
 ```
 
@@ -378,7 +378,7 @@ select empno as 사번, name as 이름, job as 직업 from employee order by 이
 
 > 내림차순 desc
 
-```markup
+```sql
 select empno, name, job from employee order by name desc;
 ```
 
@@ -387,7 +387,7 @@ select empno, name, job from employee order by name desc;
 
 >where
 
-```markup
+```sql
 select name, hiredate from employee where hiredate < '1981-01-01';
 
 select name, deptno from employee where deptno = 30;
@@ -397,7 +397,7 @@ select name, deptno from employee where deptno = 30;
 
 >IN
 
-```markup
+```sql
 select name, deptno from employee where deptno in (10, 30);
 ```
 
@@ -405,7 +405,7 @@ select name, deptno from employee where deptno in (10, 30);
 
 >like
 
-```markup
+```sql
 select name, job from employee where name like '%A%';
 ```
 -   % 는 0에서부터 여러 개의 문자열을 나타냄
@@ -418,7 +418,7 @@ select name, job from employee where name like '%A%';
 > UCASE, UPPER: 대문자 변환
 > 
 
-```markup
+```sql
 mysql> SELECT UPPER('SEoul'), UCASE('seOUL');
 ```
 
@@ -428,7 +428,7 @@ mysql> SELECT UPPER('SEoul'), UCASE('seOUL');
 > LCASE, LOWER: 소문자 변환
 > 
 
-```markup
+```sql
 mysql> SELECT LOWER('SEoul'), LCASE('seOUL');
 ```
 
@@ -438,7 +438,7 @@ mysql> SELECT LOWER('SEoul'), LCASE('seOUL');
 > substring: 문자열 자르기
 > 
 
-```markup
+```sql
 mysql> SELECT SUBSTRING('Happy Day',3,2);
 ```
 
@@ -448,7 +448,7 @@ mysql> SELECT SUBSTRING('Happy Day',3,2);
 > LPAD, RPAD: 공백 채우기
 > 
 
-```markup
+```sql
 mysql> SELECT LPAD('hi',5,'?'),LPAD('joe',7,'*');
 ```
 
@@ -458,7 +458,7 @@ mysql> SELECT LPAD('hi',5,'?'),LPAD('joe',7,'*');
 
 > TRIM, LTRIM, RTRIM: 공백 제거
 
-```markup
+```sql
 mysql> SELECT LTRIM(' hello '), RTRIM(' hello ');
 ```
 
@@ -467,7 +467,7 @@ mysql> SELECT LTRIM(' hello '), RTRIM(' hello ');
 
 > ABS(x) : x의 절대값
 
-```markup
+```sql
 mysql> SELECT ABS(2), ABS(-2);
 ```
 
@@ -476,7 +476,7 @@ mysql> SELECT ABS(2), ABS(-2);
 
 > MOD(n,m) % : n을 m으로 나눈 나머지 값을 출력
 
-```markup
+```sql
 mysql> SELECT MOD(234,10), 253 % 7, MOD(29,9);
 ```
 
@@ -501,7 +501,7 @@ mysql> SELECT MOD(234,10), 253 % 7, MOD(29,9);
 
 > CAST: 형변환
 
-```markup
+```sql
 mysql> select cast(now() as date);
 ```
 
@@ -517,7 +517,7 @@ mysql> select cast(now() as date);
 - STDDEV(expr): 그룹의 표준편차를 반환
 - VARIANCE(expr): 그룹의 분산을 반환
 
-```markup
+```sql
 SELECT AVG(salary) , SUM(salary) FROM employee WHERE deptno = 30;
 ```
 
@@ -525,7 +525,7 @@ SELECT AVG(salary) , SUM(salary) FROM employee WHERE deptno = 30;
 
 > GROUP  BY 단순컬럼
 
-```markup
+```sql
 SELECT deptno, AVG(salary) , SUM(salary) FROM employee group by deptno;
 ```
 
@@ -538,7 +538,7 @@ SELECT deptno, AVG(salary) , SUM(salary) FROM employee group by deptno;
 >**VALUES** ( 필드1의 값, 필드2의 값, 필드3의 값, 필드4의 값, … )
 
 
-```markup
+```sql
 insert into ROLE (role_id, description) 
 
 values ( 200, 'CEO');
@@ -554,7 +554,7 @@ values ( 200, 'CEO');
 > **WHERE**  조건식
 
 
-```markup
+```sql
 update ROLE
 
 set description = 'CTO'
@@ -569,7 +569,7 @@ where role_id = 200;
 > 
 > **WHERE**  조건식
 
-```markup
+```sql
 delete from ROLE 
 
 where role_id = 200;
@@ -586,21 +586,15 @@ where role_id = 200;
 
 ## - 테이블생성
 
-> **create** table 테이블명( 
-> 
+> create table 테이블명(
 >          필드명1 타입 [NULL | NOT NULL][DEFAULT ][AUTO_INCREMENT],
->         
 >           필드명2 타입 [NULL | NOT NULL][DEFAULT ][AUTO_INCREMENT],
->         
 >           필드명3 타입 [NULL | NOT NULL][DEFAULT ][AUTO_INCREMENT], 
->           
 >           ........... 
->           
 >           PRIMARY KEY(필드명) 
->           
 >           );
 
-```markup
+```sql
 CREATE TABLE EMPLOYEE2(   
             empno      INTEGER NOT NULL PRIMARY KEY,  
            name       VARCHAR(10),   
@@ -621,7 +615,7 @@ CREATE TABLE EMPLOYEE2(
 >**add**  필드명 타입 [NULL | NOT NULL][DEFAULT ][AUTO_INCREMENT];
 
 
-```markup
+```sql
 alter table EMPLOYEE2
 
 add birthdate varchar(12);
@@ -634,7 +628,7 @@ add birthdate varchar(12);
 >
 >**drop**  필드명;
 
-```markup
+```sql
 alter table EMPLOYEE2
 
 drop birthdate;
@@ -649,7 +643,7 @@ drop birthdate;
 
 
 
-```markup
+```sql
 alter table EMPLOYEE2
 
 change deptno dept_no int(11);
@@ -662,7 +656,7 @@ change deptno dept_no int(11);
 >
 >**rename** 변경이름;
 
-```markup
+```sql
 alter table EMPLOYEE2 
 
 rename EMPLOYEE3;
@@ -673,7 +667,7 @@ rename EMPLOYEE3;
 
 >**drop** table 테이블이름;
 
-```markup
+```sql
 drop table EMPLOYEE2;
 ```
 
