@@ -129,7 +129,7 @@ mysql> –uroot  -p
 ## - MySQL Database 생성하기
 
 
-> mysql> create database DB이름;
+> mysql> **create** database DB이름;
 
 ```markup
 mysql> create database connectdb;
@@ -155,7 +155,7 @@ flush privileges;
 
 ## - MySQL 사용자 권한
 
-> grant all privileges on *.* to '아이디'@'%';
+> **grant** all privileges on *.* to '아이디'@'%';
 > 
 > FLUSH PRIVILEGES;
 
@@ -176,9 +176,9 @@ mysql> –h127.0.0.1 –uconnectuser –p connectdb [enter]
 
 ## - MySQL 연결끊기
 
-> mysql> QUIT
+> mysql> **QUIT**
 > 
-> mysql> exit
+> mysql> **exit**
 
 
 ## - MySQL 버전과 현재 날짜 구하기
@@ -191,65 +191,58 @@ mysql> SELECT VERSION(), CURRENT_DATE;
 
 ### 키워드는 대소문자를 구별하지 않음
 
-```markup
-mysql> SELECT VERSION(), CURRENT_DATE;
-mysql> select version(), current_date;
-mysql> SeLeCt vErSiOn(), current_DATE;
-```
+> mysql> SELECT VERSION(), CURRENT_DATE;
+  mysql> select version(), current_date;
+  mysql> SeLeCt vErSiOn(), current_DATE;
+
 
 모두 `같은 결과`
 
 
-### 쿼리를 이용해서 계산식의 결과 구하기
+### 쿼리를 이용해서 계산식의 결과 구하기 
 
-```markup
-mysql> SELECT SIN(PI()/4), (4+1)*5;
-```
+> mysql> SELECT SIN(PI()/4), (4+1)*5;
 
 
-### 여러 문장을 한 줄에 연속으로 붙여서 실행가능
-```markup
-mysql> SELECT VERSION(); SELECT NOW();
-```
+
+### 여러 문장을 한 줄에 연속으로 붙여서 실행하
+
+> mysql> SELECT VERSION(); SELECT NOW();
 
 
-### 하나의 SQL은 여러 줄로 입력가능
 
-```markup
-mysql> SELECT
+### 하나의 SQL은 여러 줄로 입력하기
+
+> mysql> SELECT
     -> USER()
     -> ,
     -> CURRENT_DATE;
-```
 
 
 ### SQL을 입력하는 도중에 취소하기
 
-```markup
-mysql> SELECT
+> mysql> SELECT
     -> \c
-mysql>
-```
+  mysql>
 
-### DBMS에 존재하는 데이터베이스 확인
 
-```markup
-mysql> show databases;
-```
+### DBMS에 존재하는 데이터베이스 확인하기
+
+> mysql> **show** databases;
+
 
 ### 사용중인 데이터베이스 전환하기
 
-```markup
-mysql> use mydb;
-```
+> mysql> **use** ;
 
 
 ---
 
+
 ## - Table(테이블)
 
 ### 테이블(Table)
-RDBMS의 기본적 저장구조 한 개 이상의 `column`과 
+RDBMS의 기본적 저장구조 1개 이상의 `column`과 
 
 0개 이상의 `row`로 구성
 
@@ -274,9 +267,8 @@ RDBMS의 기본적 저장구조 한 개 이상의 `column`과
 
 ## - 현재 데이터베이스에 존재하는 테이블 목록 확인하기
 
-```markup
-mysql> show tables;
-```
+> mysql> **show** tables;
+
 
 
 ## - SQL파일로 테이블 생성 및 값 저장
@@ -292,7 +284,7 @@ mysql> -uconnectuser  -p  connectdb   <  examples.sql
 
 ## - 테이블 구조를 확인하기 위한 DESCRIBE 명령
 
-> mysql> desc 테이블명;
+> mysql> **desc** 테이블명;
 
 ```markup
 mysql> desc employee;
@@ -303,16 +295,16 @@ mysql> desc employee;
 
 # 4. DML(select, insert, update, delete)
 
->4가지 조작어
-
 -   SELECT – 검색
 -   INSERT - 등록
 -   UPDATE - 수정
 -   DELETE - 삭제
 
+
+
 ## - SELECT
 
-> SELECT(DISTINCT) 칼럼명(ALIAS) FROM 테이블명;
+> **SELECT**(DISTINCT) 칼럼명(ALIAS) FROM 테이블명;
 
 - SELECT: 검색하고자 하는 데이터(칼럼)
 - DISTINCT: 중복행 제거
@@ -424,6 +416,7 @@ select name, job from employee where name like '%A%';
 ### SELECT 함수의 사용
 
 > UCASE, UPPER: 대문자 변환
+> 
 
 ```markup
 mysql> SELECT UPPER('SEoul'), UCASE('seOUL');
@@ -433,6 +426,8 @@ mysql> SELECT UPPER('SEoul'), UCASE('seOUL');
 
 
 > LCASE, LOWER: 소문자 변환
+> 
+
 ```markup
 mysql> SELECT LOWER('SEoul'), LCASE('seOUL');
 ```
@@ -441,6 +436,8 @@ mysql> SELECT LOWER('SEoul'), LCASE('seOUL');
 
 
 > substring: 문자열 자르기
+> 
+
 ```markup
 mysql> SELECT SUBSTRING('Happy Day',3,2);
 ```
@@ -449,6 +446,8 @@ mysql> SELECT SUBSTRING('Happy Day',3,2);
 
 
 > LPAD, RPAD: 공백 채우기
+> 
+
 ```markup
 mysql> SELECT LPAD('hi',5,'?'),LPAD('joe',7,'*');
 ```
@@ -482,9 +481,9 @@ mysql> SELECT MOD(234,10), 253 % 7, MOD(29,9);
 ```
 
 
-### SELECT 구문(함수의 사용)
+### SELECT 함수
 
--   FLOOR(x) : x보다 크지 않은 가장 큰 정수를 반환(BIGINT로 자동 변환)
+-   FLOOR(x): x보다 크지 않은 가장 큰 정수를 반환(BIGINT로 자동 변환)
 -   CEILING(x) : x보다 작지 않은 가장 작은 정수를 반환
 -   ROUND(x) : x에 가장 근접한 정수를 반환
 -   POW(x,y) POWER(x,y) : x의 y 제곱 승을 반환
@@ -524,7 +523,7 @@ SELECT AVG(salary) , SUM(salary) FROM employee WHERE deptno = 30;
 
 ### SELECT groupby 절
 
-> [GROUP  BY 단순컬럼]
+> GROUP  BY 단순컬럼
 
 ```markup
 SELECT deptno, AVG(salary) , SUM(salary) FROM employee group by deptno;
@@ -534,20 +533,25 @@ SELECT deptno, AVG(salary) , SUM(salary) FROM employee group by deptno;
 
 ## - INSERT
 
->INSERT INTO 테이블명(필드1, 필드2, 필드3, 필드4, … ) 
-  VALUES ( 필드1의 값, 필드2의 값, 필드3의 값, 필드4의 값, … )
+>**INSERT** INTO 테이블명(필드1, 필드2, 필드3, 필드4, … ) 
+>
+>**VALUES** ( 필드1의 값, 필드2의 값, 필드3의 값, 필드4의 값, … )
 
 
 ```markup
-insert into ROLE (role_id, description) values ( 200, 'CEO');
+insert into ROLE (role_id, description) 
+
+values ( 200, 'CEO');
 ```
 
 
 ## - UPDATE
 
-> UPDATE  테이블명
-   SET  필드1=필드1의값, 필드2=필드2의값, 필드3=필드3의값, …
-   WHERE  조건식
+> **UPDATE**  테이블명 
+> 
+> **SET**  필드1=필드1의값, 필드2=필드2의값, 필드3=필드3의값, … 
+> 
+> **WHERE**  조건식
 
 
 ```markup
@@ -561,12 +565,14 @@ where role_id = 200;
 
 ## - DELETE
 
-> DELETE
-   FROM  테이블명
-   WHERE  조건식
+> **DELETE** FROM  테이블명 
+> 
+> **WHERE**  조건식
 
 ```markup
-delete from ROLE where role_id = 200;
+delete from ROLE 
+
+where role_id = 200;
 ```
 
 
@@ -580,13 +586,19 @@ delete from ROLE where role_id = 200;
 
 ## - 테이블생성
 
-> create table 테이블명( 
-          필드명1 타입 [NULL | NOT NULL][DEFAULT ][AUTO_INCREMENT], 
-          필드명2 타입 [NULL | NOT NULL][DEFAULT ][AUTO_INCREMENT], 
-          필드명3 타입 [NULL | NOT NULL][DEFAULT ][AUTO_INCREMENT], 
-          ........... 
-          PRIMARY KEY(필드명) 
-          );
+> **create** table 테이블명( 
+> 
+>          필드명1 타입 [NULL | NOT NULL][DEFAULT ][AUTO_INCREMENT],
+>         
+>           필드명2 타입 [NULL | NOT NULL][DEFAULT ][AUTO_INCREMENT],
+>         
+>           필드명3 타입 [NULL | NOT NULL][DEFAULT ][AUTO_INCREMENT], 
+>           
+>           ........... 
+>           
+>           PRIMARY KEY(필드명) 
+>           
+>           );
 
 ```markup
 CREATE TABLE EMPLOYEE2(   
@@ -604,8 +616,10 @@ CREATE TABLE EMPLOYEE2(
 ### 테이블 컬럼 추가
 
 
->alter table 테이블명
-          add  필드명 타입 [NULL | NOT NULL][DEFAULT ][AUTO_INCREMENT];
+>**alter** table 테이블명
+>
+>**add**  필드명 타입 [NULL | NOT NULL][DEFAULT ][AUTO_INCREMENT];
+
 
 ```markup
 alter table EMPLOYEE2
@@ -616,20 +630,22 @@ add birthdate varchar(12);
 
 ### 테이블 컬럼 삭제
 
->alter table 테이블명
-         drop  필드명;
+>**alter** table 테이블명
+>
+>**drop**  필드명;
 
 ```markup
 alter table EMPLOYEE2
 
-drop birthdate;​
+drop birthdate;
 ```
 
 
 ### 테이블 컬럼 수정
 
-> alter table  테이블명 
-change  필드명  새필드명 타입 [NULL | NOT NULL][DEFAULT ][AUTO_INCREMENT];
+> **alter** table  테이블명 
+> 
+> **change**  필드명  새필드명 타입 [NULL | NOT NULL][DEFAULT ][AUTO_INCREMENT];
 
 
 
@@ -642,16 +658,20 @@ change deptno dept_no int(11);
 
 ### 테이블 이름 변경
 
->alter table  테이블명 rename 변경이름;
+>**alter** table  테이블명 
+>
+>**rename** 변경이름;
 
 ```markup
-alter table EMPLOYEE2 rename EMPLOYEE3;
+alter table EMPLOYEE2 
+
+rename EMPLOYEE3;
 ```
 
 
 ## - 테이블 삭제
 
->drop table 테이블이름;
+>**drop** table 테이블이름;
 
 ```markup
 drop table EMPLOYEE2;
