@@ -21,7 +21,7 @@ categories:
 - 프로그램의 소스파일은 어떤 위치에 있어야 하는가?
 - 소스가 컴파일된 파일들은 어떤 위치에 있어야 하는가?
 
-## Maven 문법
+## - Maven 문법
 
 ``` xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -131,7 +131,7 @@ categories:
 6.  모든 객체를 닫음(**중요**)
 
 
-> 1. import
+> import
 
 
 ```java
@@ -141,7 +141,7 @@ import java.sql.*;
 ---
 
 
-> 2. 드라이버 로드
+> 드라이버 로드
 
 ```java
 Class.forName( "com.mysql.jdbc.Driver" );
@@ -151,7 +151,7 @@ Class.forName( "com.mysql.jdbc.Driver" );
 ---
 
 
-> 3. Connection 얻기
+> Connection 얻기
 
 ```java
 String dburl  = "jdbc:mysql://localhost/dbName";
@@ -163,7 +163,7 @@ Connection con =  DriverManager.getConnection ( dburl, ID, PWD );
 ---
 
 
-> 4. Statement 생성
+> Statement 생성
 
 ```java
 Statement stmt = con.createStatement();
@@ -173,7 +173,7 @@ Statement stmt = con.createStatement();
 ---
 
 
-> 5. 질의 수행
+> 질의 수행
 
 ```java
 ResultSet rs = stmt.executeQuery("select no from user" );
@@ -188,7 +188,7 @@ stmt.executeUpdate(“query”);   //INSERT, UPDATE, DELETE
 ---
 
 
-> 6. ResultSet으로 결과 받기
+> ResultSet으로 결과 받기
 
 ```java
 ResultSet rs =  stmt.executeQuery( "select no from user" );
@@ -200,7 +200,7 @@ while ( rs.next() )
 ---
 
 
-> 7. Close
+> Close
 
 ```java
 rs.close();
@@ -228,7 +228,7 @@ con.close();
 ---
 
 
-Role.java
+> Role.java
 
 ```java
 package kr.or.connect.jdbcexam.dto;
@@ -696,4 +696,4 @@ public class JDBCExam5 {
 }
 ```
 
-
+# 3. Rest API
