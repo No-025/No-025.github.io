@@ -1,7 +1,7 @@
 ---
-title: "210314-웹프그래밍 기초"
+title: "210314-HTML과 CSS"
 toc: tru
-toc_label: "웹프로그래밍 기초"
+toc_label: "HTML과 CSS"
 categories:
   - HTML
   - CSS
