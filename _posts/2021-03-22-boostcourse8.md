@@ -170,7 +170,7 @@ flush privileges;
 > mysql –h호스트명 –uDB계정명 –p 데이터베이스이름
 
 ```sql
-mysql> –h127.0.0.1 –uconnectuser –p connectdb [enter]
+mysql> mysql –h127.0.0.1 –uconnectuser –p connectdb [enter]
 ```
 
 
