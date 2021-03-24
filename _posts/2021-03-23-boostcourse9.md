@@ -817,11 +817,11 @@ HTTP프로토콜을 사용한다면 모두 쉽게 구현가능
 
 1. 새로운 Maven Project에 생성
 2. `Navigator`탭으로 이동
-3. `.seetings`의 `org.eclipse.wst.common.poject.facet.core.xml` 열기 
+3. `.seetings` > `org.eclipse.wst.common.poject.facet.core.xml` 열기 
 4. `jst.web` 버전 `3.1`로 변경
-5. `이클립스 재시작`
-6. `propertices`의 `Project Facets`에서 'dynamic web module`이 `3.1`로 바뀐것 확인
-7. `WEB-INF`의 `web.xml` 삭제
+5. 이클립스 재시작
+6. `propertices` > `Project Facets` > 'dynamic web module`이 `3.1`로 바뀐것 확인
+7. `WEB-INF/web.xml` 삭제
 8. pom.xml에 `<failOnMissingWebXml>` 엘리먼트 추가
 9. `src/main`에 `java`폴더 생성
 10. 다시 `Project Explorer` 탭으로 이동
