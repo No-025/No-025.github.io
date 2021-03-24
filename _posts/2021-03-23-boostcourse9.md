@@ -731,7 +731,9 @@ public class JDBCExam5 {
 > REST API들을 조합한 어플리케이션
 
 [네이버 API 소개](https://developers.naver.com/products/intro/plan/)
+
 [페이스북의 그래프 API](https://developers.facebook.com/docs/graph-api)
+
 [공공 데이터 포털](https://www.data.go.kr/)
 
 ### REST가 지켜야할 스타일
