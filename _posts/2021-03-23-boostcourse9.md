@@ -1,11 +1,12 @@
+
 ---
-title: "210323-Maven과 JDBC, WEB API"
+title: "210323-Maven과 JDBC, API"
 toc: tru
-toc_label: "Maven과 JDBC, WEB API"
+toc_label: "Maven과 JDBC, API"
 categories:
   - Maven
   - JDBC
-  - WEB API
+  - API
 ---
 
 ---
@@ -696,4 +697,119 @@ public class JDBCExam5 {
 }
 ```
 
-# 3. Rest API
+# 3. API
+
+>Application Programming Interface
+
+`응용 프로그램`에서 사용할 수 있도록, 운영 체제나 프로그래밍 언어가 제공하는 `기능을 제어할 수 있게 만든 인터페이스`
+
+- 파일 제어
+- 창 제어
+- 화상 처리
+- 문자 제어
+
+라이브러리를 사용할 때 구현코드를 알지 못해도 `인터페이스만 알면 사용할 수 있음`
+
+
+
+
+## - REST API
+
+> REpresentational State Transfer
+
+다양한 클라이언트들에게 정보를 제공하는 방식을 하나로 `일원화`시키기 위해 
+`HTTP프로토콜로 API 제공`
+
+- 네이버에서 블로그에 글을 저장할 수 있는 기능 제공
+- 글 목록을 읽어갈 수 있도록 외부에 기능을 제공
+- 우체국에서 우편번호를 조회 능을 제공
+- 구글에서 구글 지도를 사용할 수 있는 기능 제공
+
+
+
+### Mashup
+
+> REST API들을 조합한 어플리케이션
+
+[네이버 API 소개](https://developers.naver.com/products/intro/plan/)
+[페이스북의 그래프 API](https://developers.facebook.com/docs/graph-api)
+[공공 데이터 포털](https://www.data.go.kr/)
+
+### REST가 지켜야할 스타일
+
+> REST 스타일(제약조건)
+
+-   client-server
+-   stateless
+-   cache
+-   uniform interface
+-   layered system
+-   code-on-demand (optional)
+
+HTTP프로토콜을 사용한다면 모두 쉽게 구현가능
+
+하지만,  API에서 `uniform interface`의 항목을 지원하기 어려움
+
+-   리소스가 URI로 식별되야 함
+-   리소스를 생성,수정,추가하고자 할 때 HTTP메시지에 표현을 해서 전송해야함
+-   메시지는 스스로 설명할 수 있어야 함 (Self-descriptive message)
+-   애플리케이션의 상태는 Hyperlink를 이용해 전이되야 함(HATEOAS)
+
+
+세번째 항목 `Self-descriptive message`와  네번째 항목 `HATEOAS`을 API에서 제공하는것은 쉽지 않기 때문에 보통 `Web API(혹은 HTTP API)` 사용
+
+
+## - Web API(혹은 HTTP API)
+
+> REST의 모든 스타일을 구현하지 않음
+
+### Web API 디자인 가이드
+
+-   URI는 정보의 자원을 표현해야 합니다.
+-   자원에 대한 행위는 HTTP Method(GET, POST, PUT, DELETE)로 표현
+
+### HTTP Method
+
+- **GET**: 리소스 조회
+- **POST**: 리소스 생성
+- **PUT**: 리소스 수정
+- **DELETE**: 리소스 삭제
+
+
+### HTTP Method로 표현
+ 
+-   GET /members/1 (o)
+-   GET /members/get/1 (x)
+-   GET /members/add (x)
+-   POST /members (o)
+-   GET /members/update/1 (x)
+-   PUT /members/1 (o)
+-   GET /members/del/1 (x)
+-   DELETE /members/1 (o)
+
+---
+
+-   슬래시 구분자(/)는 계층을 나타낼 때 사용
+-   URI 마지막 문자로 슬래시 구분자(/)를 포함하지 않음
+-   하이픈(-)은 URI가독성을 높일 때 사용
+-   언더바(_)는 사용하지 않음
+-   URI경로는 소문자만 사용
+-   RFC 3986(URI 문법 형식)은 URI스키마와 호스트를 제외하고는 대소문자를 구별
+-   파일 확장자는 URI에 포함하지 않음
+-   Accept Header를 사용
+
+
+### 상태코드
+
+-   **200**: 클라이언트 요청 정상적으로 수행
+-    **201**: 클라이언트의 리소스 생성요청(POST) 성공적으로 수행
+-   **400**: 클라이언트 요청이 부적절
+-    **401**: 클라이언트가 인증되지 않은 상태에서 보호된 리소스 요청
+-    **403**:  클라이언트가 응답하고싶지 않은 리소스를 요청(**400**이나 **404**권고)
+-    **405**: 클라이언트가 요청한 리소스에서는 사용불가능한 Method 이용
+-    **301**: 클라이언트가 요청한 리소스스에대 한 URL이 변경됨
+-    **500**: 서버에 문제가 있음
+
+
+
+
