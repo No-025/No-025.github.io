@@ -758,6 +758,7 @@ HTTP프로토콜을 사용한다면 모두 쉽게 구현가능
 
 세번째 항목 `Self-descriptive message`와  네번째 항목 `HATEOAS`을 API에서 제공하는것은 쉽지 않기 때문에 보통 `Web API(혹은 HTTP API)` 사용
 
+---
 
 ## - Web API(혹은 HTTP API)
 
@@ -810,6 +811,172 @@ HTTP프로토콜을 사용한다면 모두 쉽게 구현가능
 -    **301**: 클라이언트가 요청한 리소스스에대 한 URL이 변경됨
 -    **500**: 서버에 문제가 있음
 
+
+### Web API 예제
+
+
+
+1. 새로운 Maven Project에 생성
+2. `Navigator`탭으로 이동
+3. `.seetings`의 `org.eclipse.wst.common.poject.facet.core.xml` 열기 
+4. `jst.web` 버전 `3.1`로 변경
+5. `이클립스 재시작`
+6. `propertices`의 `Project Facets`에서 'dynamic web module`이 `3.1`로 바뀐것 확인
+7. `WEB-INF`의 `web.xml` 삭제
+8. pom.xml에 `<failOnMissingWebXml>` 엘리먼트 추가
+9. `src/main`에 `java`폴더 생성
+10. 다시 `Project Explorer` 탭으로 이동
+11. `src/main/java`에 새로운 패키지 생성
+12. `src/main/java`에 JDBC에서 사용했던 패키지 `kr.or.connect.jdbcexam.dao`와 `kr.or.connect.jdbcexam.dto` 이클립스 내에서 복사
+13. `src/main/java`에 만들었던 패키지 밑에 `RolesServlet`서블릿 생성
+
+> pom.xml
+> 
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>kr.or.connect</groupId>
+	<artifactId>webapiexam</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	<name>webapiexam Maven Webapp</name>
+	<!-- FIXME change it to the project's website -->
+	<url>http://www.example.com</url>
+
+	<properties>
+	<!-- 3.1로 바꾸었기 때문에 web.xml 파일을 삭제함. 오류가 발생하기 때문에 false로 값을 넣어주자 -->
+		<failOnMissingWebXml>false</failOnMissingWebXml>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
+	</properties>
+
+	<dependencies>
+		<!-- mysql 추가 -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.23</version>
+		</dependency>
+		<!-- json 라이브러리 databind jackson-core, jackson-annotaion에 의존성이 있다. -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.9.4</version>
+		</dependency>
+		<!-- 서블릿 추가 -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>webapiexam</finalName>
+		<pluginManagement><!-- lock down plugins versions to avoid using Maven 
+				defaults (may be moved to parent pom) -->
+			<plugins>
+				<plugin>
+					<artifactId>maven-clean-plugin</artifactId>
+					<version>3.1.0</version>
+				</plugin>
+				<!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging -->
+				<plugin>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>3.0.2</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.8.0</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.22.1</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>3.2.2</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-install-plugin</artifactId>
+					<version>2.5.2</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-deploy-plugin</artifactId>
+					<version>2.8.2</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+</project>
+
+```
+
+---
+
+>RolesServlet.java
+>
+
+```java
+package kr.or.connect.webapiexam.api;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import kr.or.connect.jdbcexam.dao.RoleDao;
+import kr.or.connect.jdbcexam.dto.Role;
+
+@WebServlet("/roles")
+public class RolesServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	public RolesServlet() {
+		super();
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		response.setCharacterEncoding("utf-8"); // 한글처리를 위해 필요
+		response.setContentType("application/json"); //json으로 타입지정
+
+		RoleDao dao = new RoleDao(); // kr.or.connect.jdbcexam.dao 밑에 있는 RoleDao클래스
+
+		List<Role> list = dao.getRoles();
+
+		ObjectMapper objectMapper = new ObjectMapper(); //json문자열을 객체로 바꿈
+		String json = objectMapper.writeValueAsString(list); //list가 json문자로 바꿈
+
+		PrintWriter out = response.getWriter();
+		out.println(json);
+		out.close();
+	}
+
+}
+```
 
 
 
