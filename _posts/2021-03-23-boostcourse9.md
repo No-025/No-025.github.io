@@ -1,5 +1,5 @@
 ---
-title: "210323-Maven과 JDBC, API"
+title: "Maven과 JDBC, API"
 toc: tru
 toc_label: "Maven과 JDBC, API"
 categories:
