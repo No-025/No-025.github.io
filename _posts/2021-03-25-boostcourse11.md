@@ -1,5 +1,5 @@
 ---
-title: "210325-파이썬 기본 문법"
+title: "파이썬 기본 문법"
 toc: tru
 toc_label: "파이썬 기본 문법"
 categories:
