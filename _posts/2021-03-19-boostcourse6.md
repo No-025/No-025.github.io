@@ -1,5 +1,5 @@
 ---
-title: "210319-JSP"
+title: "JSP"
 toc: tru
 toc_label: "JSP"
 categories:
