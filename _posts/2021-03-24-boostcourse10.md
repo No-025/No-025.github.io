@@ -1,7 +1,7 @@
 ---
-title: "오류해결"
+title: "Maven 오류해결"
 toc: tru
-toc_label: "오류해결"
+toc_label: "Maven 오류해결"
 categories:
   - Eclipse
 ---
