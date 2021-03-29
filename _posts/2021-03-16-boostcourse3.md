@@ -1,5 +1,5 @@
 ---
-title: "210316-이클립스로 실행한 html에 css가 적용"
+title: "이클립스로 실행한 html에 css가 적용"
 toc: tru
 toc_label: "CSS 적용하기"
 categories:
