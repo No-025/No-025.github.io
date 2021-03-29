@@ -1,5 +1,5 @@
 ---
-title: "210322-DB와 SQL"
+title: "DB와 SQL"
 toc: tru
 toc_label: "DB와 SQL"
 categories:
