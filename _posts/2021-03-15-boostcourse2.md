@@ -1,5 +1,5 @@
 ---
-title: "210315-서블릿"
+title: "서블릿"
 toc: tru
 toc_label: "서블릿"
 categories:
