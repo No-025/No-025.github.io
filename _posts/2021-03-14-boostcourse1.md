@@ -1,5 +1,5 @@
 ---
-title: "210314-HTML과 CSS"
+title: "HTML과 CSS"
 toc: tru
 toc_label: "HTML과 CSS"
 categories:
