@@ -1,5 +1,5 @@
 ---
-title: "210321-Scope와 JSTL, EL"
+title: "Scope와 JSTL, EL"
 toc: tru
 toc_label: "Scope와 JSTL, EL"
 categories:
