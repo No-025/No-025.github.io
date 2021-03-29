@@ -1,5 +1,5 @@
 ---
-title: "210318-자바스크립트"
+title: "자바스크립트"
 toc: tru
 toc_label: "자바스크립트"
 categories:
