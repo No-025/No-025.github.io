@@ -8,6 +8,7 @@ categories:
 
 
 ---
+
 # 스택
 
 한쪽 방향으로만 자료를 넣고 뺄 수 있는 자료구조
@@ -53,31 +54,32 @@ categories:
 ---
 
 
-# 최대 공약수(GreatestCommonDivisor)
+# 유클리드 호제법(Euclidean algorithm)
 
-## 유클리드 호제법(Euclidean algorithm)
+> 최대공약수(GreatestCommonDivisor) 구하기
 
 a를 b로 나눈 나머지를 r이라고 했을 때
-> GCD(a, b) = GCD(b, r)
-r이 0이면 그 때 b가 최대 공약수이다.
+
+`GCD(a, b) = GCD(b, r) `
+
+r이 0이면 그 때 `b가 최대 공약수`
 
 
 ---
 
 # 최소공배수(LeastCommonMultiple)
 
-## 최소공배수 구하기
+두 수 a, b의 최대공약수를 g라고 했을 때
 
-두 수 a, b의 최대공약수를 g라고 했을 때,
 > 최소공배수 = g * (a/g) * (b/g)
 
 
 ---
 
 
-# 소수(PrimeNumber)
+# 에라토스테네스의 체(SieveofEratosthenes)
 
-## 에라토스테네스의 체(SieveofEratosthenes)
+> 소수(PrimeNumber) 구하기
 
 1. 2부터 N까지의 수 중 가장 작은 수를 찾는다.
 
