@@ -9,7 +9,7 @@ categories:
 
 ---
 
-# 스택
+# 1. 스택
 
 한쪽 방향으로만 자료를 넣고 뺄 수 있는 자료구조
 
@@ -23,7 +23,7 @@ categories:
 
 ---
 
-# 큐
+# 2. 큐
 
 한쪽 끝에서만 자료를 넣고 다른 한쪽 끝에서만 뺄 수 있는 자료구조
 
@@ -39,7 +39,7 @@ categories:
 
 ---
 
-# 덱
+# 3. 덱
 
 양 끝에서만 자료를 넣고 양 끝에서 뺄 수 있는 자료구조
 
@@ -54,7 +54,7 @@ categories:
 ---
 
 
-# 유클리드 호제법(Euclidean algorithm)
+# 4. 유클리드 호제법(Euclidean algorithm)
 
 > 최대공약수(GreatestCommonDivisor) 구하기
 
@@ -67,7 +67,7 @@ r이 0이면 그 때 `b가 최대 공약수`
 
 ---
 
-# 최소공배수(LeastCommonMultiple)
+# 5. 최소공배수(LeastCommonMultiple)
 
 두 수 a, b의 최대공약수를 g라고 했을 때
 
@@ -77,7 +77,7 @@ r이 0이면 그 때 `b가 최대 공약수`
 ---
 
 
-# 에라토스테네스의 체(SieveofEratosthenes)
+# 6. 에라토스테네스의 체(SieveofEratosthenes)
 
 > 소수(PrimeNumber) 구하기
 
