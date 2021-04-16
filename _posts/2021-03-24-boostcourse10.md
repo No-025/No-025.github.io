@@ -41,7 +41,7 @@ categories:
 
 ## - 이유
 
-Maven > Update Project Configuration 실행시 maven 라이브러리 경로가 삭제됨
+Maven > Update Project Configuration 실행시 `maven 라이브러리 경로가 삭제`됨
 
 ---
 
