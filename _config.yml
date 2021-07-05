@@ -96,8 +96,8 @@ analytics:
 author:
   name             : "025"
   avatar           : "/assets/images/tail.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I'm noob student develope **025**🌱"
-  location         : "Korea"
+  bio              : "I post what I studied."
+  location         : "Seoul,Korea"
   email            : 
   links:
     - label: "Email"
@@ -114,7 +114,7 @@ author:
       # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: https://github.com/No-025 #"https://github.com/"
+      url: https://github.com/soo025 #"https://github.com/"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
